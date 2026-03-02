@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesquisa de Mercado profissional pela Velora Strategy. Tome decisões baseadas em dados reais e saia na frente da concorrência.">
+  <title>Pesquisa de Mercado | Velora Strategy</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ===== PESQUISA DE MERCADO — WHITE THEME ===== */
+    :root {
+      --bg-primary: #FAFBFC;
+      --bg-secondary: #FFFFFF;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3D3D5C;
+      --accent: #00C9DB;
+      --accent-dark: #00A8B8;
+      --accent-glow: rgba(0, 201, 219, 0.15);
+      --card-bg: #FFFFFF;
+      --card-border: rgba(26, 26, 46, 0.08);
+      --input-bg: #F4F6F8;
+      --input-border: rgba(26, 26, 46, 0.12);
+      --input-focus: #00C9DB;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    /* Header */
+    .header {
+      background: rgba(250, 251, 252, 0.85);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .logo {
+      color: var(--text-primary);
+    }
+
+    .logo .velora-mark {
+      color: var(--accent);
+    }
+
+    .header-cta {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .header-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    /* Hero */
+    .hero-image-wrapper::after {
+      background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-headline {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .hero-headline .highlight {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      max-width: 90%;
+    }
+
+    /* Pain Points */
+    .pain-point {
+      border-bottom-color: var(--card-border);
+    }
+
+    .pain-point-icon {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+
+    .pain-point-text {
+      color: var(--text-secondary);
+    }
+
+    /* Form Card */
+    .form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .form-title {
+      color: var(--text-primary);
+    }
+
+    .form-subtitle {
+      color: var(--text-secondary);
+    }
+
+    .form-group label {
+      color: var(--text-secondary);
+    }
+
+    .form-group input {
+      background: var(--input-bg);
+      border-color: var(--input-border);
+      color: var(--text-primary);
+    }
+
+    .form-group input:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+      background: #FFFFFF;
+    }
+
+    .form-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #FFFFFF;
+    }
+
+    .form-btn:hover {
+      background: linear-gradient(135deg, var(--accent-dark), #008B9A);
+    }
+
+    .form-privacy {
+      color: var(--text-secondary);
+    }
+
+    /* Social Proof */
+    .social-proof-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--card-border);
+    }
+
+    .section-label {
+      color: var(--accent);
+    }
+
+    .section-title {
+      color: var(--text-primary);
+    }
+
+    .carousel-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--card-border);
+    }
+
+    .carousel-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .carousel-avatar {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+
+    .carousel-username {
+      color: var(--text-primary);
+    }
+
+    .carousel-handle {
+      color: var(--text-secondary);
+    }
+
+    .carousel-body {
+      color: var(--text-secondary);
+    }
+
+    .carousel-date {
+      color: var(--text-secondary);
+      border-top-color: var(--card-border);
+    }
+
+    .carousel-btn {
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+
+    .carousel-btn:hover {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+    }
+
+    .carousel-dot {
+      background: var(--accent);
+    }
+
+    /* Footer */
+    .footer {
+      color: var(--text-secondary);
+      border-top-color: var(--card-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="logo">
+      <span class="velora-mark">Velora</span> <span>Strategy</span>
+    </div>
+    <a href="#formulario" class="header-cta">Solicitar Pesquisa</a>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <span class="hero-badge">Pesquisa de Mercado</span>
+        <h1 class="hero-headline">
+          Pare de investir no escuro.<br>
+          <span class="highlight">Dados reais</span> para<br>
+          decisões que geram resultado.
+        </h1>
+        <p class="hero-sub">
+          Descubra o que seu mercado realmente pensa, como seus concorrentes se posicionam e onde estão as oportunidades que ninguém viu.
+        </p>
+
+        <div class="hero-image-wrapper">
+          <img src="images/hero-pesquisa-mercado.png" alt="Profissional de pesquisa de mercado apontando para dados estratégicos">
+        </div>
+
+        <div class="pain-points">
+          <div class="pain-point">
+            <div class="pain-point-icon">📊</div>
+            <p class="pain-point-text">Cansado de investir sem saber se vai dar retorno? Nossa pesquisa revela exatamente onde colocar cada real.</p>
+          </div>
+          <div class="pain-point">
+            <div class="pain-point-icon">🎯</div>
+            <p class="pain-point-text">Seus concorrentes saem na frente porque conhecem o mercado melhor que você? Hora de virar esse jogo com inteligência de dados.</p>
+          </div>
+          <div class="pain-point">
+            <div class="pain-point-icon">💡</div>
+            <p class="pain-point-text">Decisões baseadas em achismo estão custando caro? Transforme intuição em estratégia com dados concretos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="form-card" id="formulario">
+          <h2 class="form-title">Solicite sua Pesquisa de Mercado</h2>
+          <p class="form-subtitle">Preencha os campos abaixo e nossa equipe entrará em contato em até 24 horas.</p>
+
+          <form id="form-pesquisa" action="#" method="POST">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+            <button type="submit" class="form-btn" id="btn-enviar">Quero minha Pesquisa</button>
+          </form>
+
+          <p class="form-privacy">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4z"/></svg>
+            Seus dados estão seguros conosco
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof-section" id="provas-sociais">
+      <p class="section-label">Provas Sociais</p>
+      <h2 class="section-title">O que dizem sobre nosso trabalho</h2>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="carousel-track">
+
+          <!-- Card 1 - Twitter -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">𝕏</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+          <!-- Card 2 - Instagram -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">📷</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+          <!-- Card 3 - Twitter -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">𝕏</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+          <!-- Card 4 - Instagram -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">📷</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+          <!-- Card 5 - Twitter -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">𝕏</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+          <!-- Card 6 - Instagram -->
+          <div class="carousel-card">
+            <div class="carousel-card-header">
+              <div class="carousel-avatar">?</div>
+              <div class="carousel-user-info">
+                <div class="carousel-username">Nome do Cliente</div>
+                <div class="carousel-handle">@handle</div>
+              </div>
+              <div class="carousel-platform">📷</div>
+            </div>
+            <div class="carousel-body">
+              <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
+            </div>
+            <div class="carousel-date">Data da publicação</div>
+          </div>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">‹</button>
+          <div class="carousel-dots" id="carousel-dots">
+            <button class="carousel-dot active" aria-label="Slide 1"></button>
+            <button class="carousel-dot" aria-label="Slide 2"></button>
+          </div>
+          <button class="carousel-btn" id="carousel-next" aria-label="Próximo">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // ===== Header Scroll Effect =====
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ===== Carousel =====
+    const track = document.getElementById('carousel-track');
+    const cards = track.querySelectorAll('.carousel-card');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    let currentIndex = 0;
+    let cardsPerView = 3;
+
+    function updateCardsPerView() {
+      if (window.innerWidth <= 768) cardsPerView = 1;
+      else if (window.innerWidth <= 1024) cardsPerView = 2;
+      else cardsPerView = 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - cardsPerView);
+    }
+
+    function moveCarousel(index) {
+      updateCardsPerView();
+      currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+      const cardWidth = cards[0].offsetWidth + 24; // gap
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === Math.floor(currentIndex / cardsPerView)));
+    }
+
+    prevBtn.addEventListener('click', () => moveCarousel(currentIndex - 1));
+    nextBtn.addEventListener('click', () => moveCarousel(currentIndex + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => moveCarousel(i * cardsPerView)));
+    window.addEventListener('resize', () => moveCarousel(currentIndex));
+
+    // ===== Phone Mask =====
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) v = `(${v}`;
+      e.target.value = v;
+    });
+
+    // ===== Form Submit =====
+    document.getElementById('form-pesquisa').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-enviar');
+      btn.textContent = 'Enviado com sucesso! ✓';
+      btn.style.background = '#00A8B8';
+      setTimeout(() => {
+        btn.textContent = 'Quero minha Pesquisa →';
+        btn.style.background = '';
+        this.reset();
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
