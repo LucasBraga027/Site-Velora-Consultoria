@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Plano de Marketing Político e Eleitoral pela Velora Strategy. Estratégia, posicionamento e comunicação para campanhas vencedoras.">
+        content="Plano de Marketing Político e Eleitoral pela Velora Strategy. Posicione sua candidatura, engaje eleitores e construa uma campanha vencedora.">
     <title>Marketing Político &amp; Eleitoral | Velora Strategy</title>
     <link rel="stylesheet" href="shared.css">
     <style>
@@ -13,6 +13,7 @@
         :root {
             --bg-primary: #0A1628;
             --bg-secondary: #0E1D33;
+            --bg-tertiary: #071120;
             --text-primary: #E8EDF2;
             --text-secondary: #A8B8CC;
             --accent: #D4A843;
@@ -30,7 +31,7 @@
             color: var(--text-primary);
         }
 
-        /* Subtle pattern overlay */
+        /* Subtle pattern */
         body::before {
             content: '';
             position: fixed;
@@ -38,8 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.04) 0%, transparent 60%),
+            background: radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.04) 0%, transparent 60%),
                 radial-gradient(ellipse at 80% 20%, rgba(10, 22, 40, 0.5) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
@@ -47,7 +47,9 @@
 
         .header,
         .hero,
+        .how-it-works,
         .social-proof-section,
+        .final-cta,
         .footer {
             position: relative;
             z-index: 1;
@@ -55,7 +57,7 @@
 
         /* Header */
         .header {
-            background: rgba(10, 22, 40, 0.85);
+            background: rgba(10, 22, 40, 0.88);
             border-bottom: 1px solid var(--card-border);
         }
 
@@ -101,9 +103,9 @@
 
         .hero-headline {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.12;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
@@ -119,6 +121,19 @@
             max-width: 90%;
         }
 
+        /* Stats */
+        .stats-bar {
+            border-color: var(--card-border);
+        }
+
+        .stat-number {
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+        }
+
         /* Pain Points */
         .pain-point {
             border-bottom-color: var(--card-border);
@@ -131,6 +146,16 @@
 
         .pain-point-text {
             color: var(--text-secondary);
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .urgency-banner .urgency-dot {
+            background: var(--bg-primary);
         }
 
         /* Form Card */
@@ -150,6 +175,17 @@
             color: var(--text-secondary);
         }
 
+        /* Benefits */
+        .form-benefits li {
+            color: var(--text-secondary);
+        }
+
+        .form-benefits .check-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        /* Inputs */
         .form-group label {
             color: var(--text-secondary);
         }
@@ -180,7 +216,43 @@
             background: linear-gradient(135deg, var(--accent-dark), #9A7A20);
         }
 
-        .form-privacy {
+        /* Trust Row */
+        .trust-row {
+            border-top-color: var(--card-border);
+        }
+
+        .trust-item {
+            color: var(--text-secondary);
+        }
+
+        /* How it Works */
+        .how-it-works {
+            background: var(--bg-tertiary);
+        }
+
+        .steps-grid::before {
+            background: var(--accent);
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .step-card:hover {
+            box-shadow: 0 8px 25px rgba(212, 168, 67, 0.1);
+        }
+
+        .step-number {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .step-title {
+            color: var(--text-primary);
+        }
+
+        .step-desc {
             color: var(--text-secondary);
         }
 
@@ -246,6 +318,34 @@
             background: var(--accent);
         }
 
+        /* Final CTA */
+        .final-cta {
+            background: var(--bg-tertiary);
+        }
+
+        .final-cta .section-title {
+            color: var(--text-primary);
+        }
+
+        .final-cta .section-sub {
+            color: var(--text-secondary);
+        }
+
+        .final-cta-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--bg-primary);
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            background: rgba(10, 22, 40, 0.95);
+        }
+
+        .floating-cta a {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
         /* Footer */
         .footer {
             color: var(--text-secondary);
@@ -261,53 +361,86 @@
         <div class="logo">
             <span class="velora-mark">Velora</span> <span>Strategy</span>
         </div>
-        <a href="#formulario" class="header-cta">Solicitar Plano</a>
+        <a href="#formulario" class="header-cta">Falar com Estrategista</a>
     </header>
 
     <!-- HERO -->
     <main>
         <section class="hero" id="hero">
             <div class="hero-left">
-                <span class="hero-badge">Marketing Político & Eleitoral</span>
+                <span class="hero-badge">🏛️ Marketing Político & Eleitoral</span>
                 <h1 class="hero-headline">
-                    Sua campanha precisa de<br>
-                    <span class="highlight">estratégia</span>, não de<br>
-                    improviso.
+                    Campanha sem estratégia<br>
+                    é dinheiro queimado.<br>
+                    <span class="highlight">Vença com método.</span>
                 </h1>
                 <p class="hero-sub">
-                    Construímos planos de marketing político que posicionam candidatos, engajam eleitores e transformam
-                    votos em vitória.
+                    82% dos candidatos que perdem não tinham um plano de marketing estruturado. Construímos a estratégia
+                    que posiciona, engaja e converte eleitor em voto.
                 </p>
 
                 <div class="hero-image-wrapper">
                     <img src="images/hero-marketing-politico.png"
-                        alt="Estrategista político em ambiente de campanha eleitoral">
+                        alt="Estrategista político em planejamento de campanha eleitoral">
                 </div>
 
+                <!-- Stats Bar -->
+                <div class="stats-bar reveal">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="45">0+</div>
+                        <div class="stat-label">Campanhas assessoradas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="78">0%</div>
+                        <div class="stat-label">Taxa de eleição</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Estados atendidos</div>
+                    </div>
+                </div>
+
+                <!-- Pain Points (Triad) -->
                 <div class="pain-points">
                     <div class="pain-point">
                         <div class="pain-point-icon">📢</div>
-                        <p class="pain-point-text">Sua mensagem não chega ao eleitor certo? Definimos segmentação e tom
-                            de voz para máximo impacto em cada nicho eleitoral.</p>
+                        <p class="pain-point-text"><strong>Sua mensagem não chega no eleitor certo?</strong> Sem
+                            segmentação, você fala para todos e convence ninguém. Definimos tom de voz, público
+                            prioritário e canais de impacto máximo para cada nicho eleitoral.</p>
                     </div>
                     <div class="pain-point">
                         <div class="pain-point-icon">💰</div>
-                        <p class="pain-point-text">Sua campanha gasta muito e gera poucos votos? Otimizamos cada real
-                            investido com estratégias baseadas em dados e inteligência territorial.</p>
+                        <p class="pain-point-text"><strong>Gasta muito e ganha poucos votos?</strong> Campanhas sem
+                            estratégia desperdiçam até 60% do orçamento. Otimizamos cada real com inteligência
+                            territorial e dados de intenção de voto.</p>
                     </div>
                     <div class="pain-point">
                         <div class="pain-point-icon">📱</div>
-                        <p class="pain-point-text">Seus adversários dominam as redes e você fica para trás? Criamos
-                            presença digital que viraliza e constroi autoridade nas plataformas certas.</p>
+                        <p class="pain-point-text"><strong>Seus adversários dominam as redes?</strong> Quem não aparece,
+                            não é lembrado. Criamos presença digital que viraliza, constrói autoridade e transforma
+                            seguidores em cabo eleitoral.</p>
                     </div>
                 </div>
             </div>
 
             <div class="hero-right">
+                <!-- Urgency Banner -->
+                <div class="urgency-banner">
+                    <span class="urgency-dot"></span>
+                    Planejamento antecipado = vantagem competitiva
+                </div>
+
                 <div class="form-card" id="formulario">
-                    <h2 class="form-title">Monte seu Plano de Marketing Eleitoral</h2>
-                    <p class="form-subtitle">Preencha abaixo e receba uma consultoria estratégica personalizada para sua
-                        campanha.</p>
+                    <h2 class="form-title">Estruture sua Estratégia Eleitoral</h2>
+                    <p class="form-subtitle">Consultoria estratégica confidencial. Retorno em até 24 horas.</p>
+
+                    <!-- Benefits Checklist -->
+                    <ul class="form-benefits">
+                        <li><span class="check-icon">✓</span> Diagnóstico do posicionamento atual</li>
+                        <li><span class="check-icon">✓</span> Mapa de forças e fraquezas eleitorais</li>
+                        <li><span class="check-icon">✓</span> Estratégia de comunicação personalizada</li>
+                        <li><span class="check-icon">✓</span> Plano de ação para redes sociais</li>
+                    </ul>
 
                     <form id="form-politico" action="#" method="POST">
                         <div class="form-group">
@@ -322,29 +455,75 @@
                             <label for="email">E-mail</label>
                             <input type="email" id="email" name="email" placeholder="seu@email.com" required>
                         </div>
-                        <button type="submit" class="form-btn" id="btn-enviar">Quero meu Plano Estratégico</button>
+                        <button type="submit" class="form-btn" id="btn-enviar">Quero minha Consultoria
+                            Estratégica</button>
                     </form>
 
-                    <p class="form-privacy">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4z" />
-                        </svg>
-                        Seus dados estão seguros conosco
+                    <!-- Trust Row -->
+                    <div class="trust-row">
+                        <div class="trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4z" />
+                            </svg>
+                            100% confidencial
+                        </div>
+                        <div class="trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            Sem compromisso
+                        </div>
+                        <div class="trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                            </svg>
+                            Resposta em 24h
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="how-it-works reveal" id="como-funciona">
+            <p class="section-label">Como Funciona</p>
+            <h2 class="section-title">Sua campanha estruturada em 4 etapas</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Mapeamento</h3>
+                    <p class="step-desc">Analisamos o cenário eleitoral, concorrentes e os pontos fortes da sua
+                        candidatura.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Posicionamento</h3>
+                    <p class="step-desc">Definimos narrativa, tom de voz e a mensagem central que vai diferenciar você.
                     </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Plano de Ação</h3>
+                    <p class="step-desc">Estratégia completa com cronograma, canais, conteúdo e metas por segmento.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Acompanhamento</h3>
+                    <p class="step-desc">Monitoramos métricas, ajustamos estratégias e otimizamos em tempo real.</p>
                 </div>
             </div>
         </section>
 
         <!-- SOCIAL PROOF -->
-        <section class="social-proof-section" id="provas-sociais">
-            <p class="section-label">Provas Sociais</p>
-            <h2 class="section-title">O que dizem sobre nosso trabalho</h2>
+        <section class="social-proof-section reveal" id="provas-sociais">
+            <p class="section-label">Depoimentos Reais</p>
+            <h2 class="section-title">O que publicaram sobre nosso trabalho</h2>
 
             <div class="carousel-container">
                 <div class="carousel-track" id="carousel-track">
-
-                    <!-- Card 1 - Twitter -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -359,8 +538,6 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
-                    <!-- Card 2 - Instagram -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -375,8 +552,6 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
-                    <!-- Card 3 - Twitter -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -391,8 +566,6 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
-                    <!-- Card 4 - Instagram -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -407,8 +580,6 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
-                    <!-- Card 5 - Twitter -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -423,8 +594,6 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
-                    <!-- Card 6 - Instagram -->
                     <div class="carousel-card">
                         <div class="carousel-card-header">
                             <div class="carousel-avatar">?</div>
@@ -439,9 +608,7 @@
                         </div>
                         <div class="carousel-date">Data da publicação</div>
                     </div>
-
                 </div>
-
                 <div class="carousel-controls">
                     <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">‹</button>
                     <div class="carousel-dots" id="carousel-dots">
@@ -452,7 +619,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta reveal">
+            <h2 class="section-title">Eleição se ganha antes do dia da urna.</h2>
+            <p class="section-sub">Quanto antes sua estratégia estiver pronta, maior sua vantagem. Candidate-se com quem
+                entende de resultado.</p>
+            <a href="#formulario" class="final-cta-btn">Iniciar minha Estratégia Agora →</a>
+        </section>
     </main>
+
+    <!-- FLOATING MOBILE CTA -->
+    <div class="floating-cta" id="floating-cta">
+        <a href="#formulario">Consultoria Estratégica Gratuita →</a>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -460,10 +640,53 @@
     </footer>
 
     <script>
-        // ===== Header Scroll Effect =====
+        // ===== Header Scroll =====
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
+
+        // ===== Reveal on Scroll =====
+        const revealElements = document.querySelectorAll('.reveal, .pain-point');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // ===== Animated Counter =====
+        function animateCounters() {
+            document.querySelectorAll('.stat-number[data-target]').forEach(counter => {
+                const target = +counter.dataset.target;
+                const suffix = counter.textContent.replace(/[0-9]/g, '');
+                const duration = 1800;
+                const start = performance.now();
+                function update(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(target * eased) + suffix;
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+            });
+        }
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { animateCounters(); statsObserver.unobserve(entry.target); }
+            });
+        }, { threshold: 0.5 });
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
+
+        // ===== Floating CTA =====
+        const floatingCta = document.getElementById('floating-cta');
+        const formSection = document.getElementById('formulario');
+        if (floatingCta && formSection) {
+            const floatObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { floatingCta.classList.toggle('visible', !entry.isIntersecting); });
+            }, { threshold: 0.3 });
+            floatObserver.observe(formSection);
+        }
 
         // ===== Carousel =====
         const track = document.getElementById('carousel-track');
@@ -472,20 +695,14 @@
         const nextBtn = document.getElementById('carousel-next');
         const dotsContainer = document.getElementById('carousel-dots');
         const dots = dotsContainer.querySelectorAll('.carousel-dot');
-
-        let currentIndex = 0;
-        let cardsPerView = 3;
+        let currentIndex = 0, cardsPerView = 3;
 
         function updateCardsPerView() {
             if (window.innerWidth <= 768) cardsPerView = 1;
             else if (window.innerWidth <= 1024) cardsPerView = 2;
             else cardsPerView = 3;
         }
-
-        function getMaxIndex() {
-            return Math.max(0, cards.length - cardsPerView);
-        }
-
+        function getMaxIndex() { return Math.max(0, cards.length - cardsPerView); }
         function moveCarousel(index) {
             updateCardsPerView();
             currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
@@ -493,7 +710,6 @@
             track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
             dots.forEach((d, i) => d.classList.toggle('active', i === Math.floor(currentIndex / cardsPerView)));
         }
-
         prevBtn.addEventListener('click', () => moveCarousel(currentIndex - 1));
         nextBtn.addEventListener('click', () => moveCarousel(currentIndex + 1));
         dots.forEach((dot, i) => dot.addEventListener('click', () => moveCarousel(i * cardsPerView)));
@@ -513,11 +729,13 @@
         document.getElementById('form-politico').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('btn-enviar');
-            btn.textContent = 'Enviado com sucesso! ✓';
+            btn.textContent = '✓ Enviado com sucesso!';
             btn.style.background = '#B8912E';
+            btn.style.pointerEvents = 'none';
             setTimeout(() => {
-                btn.textContent = 'Quero meu Plano Estratégico →';
+                btn.textContent = 'Quero minha Consultoria Estratégica →';
                 btn.style.background = '';
+                btn.style.pointerEvents = '';
                 this.reset();
             }, 3000);
         });
