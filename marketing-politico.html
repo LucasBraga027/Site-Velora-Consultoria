@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Plano de Marketing Político e Eleitoral pela Velora Strategy. Posicione sua candidatura, engaje eleitores e construa uma campanha vencedora.">
+        content="Plano de Marketing Político e Eleitoral pela Velora Strategy. Posicionamento estratégico, narrativa diferenciada e presença digital inteligente para candidatos e mandatários.">
     <title>Marketing Político &amp; Eleitoral | Velora Strategy</title>
     <link rel="stylesheet" href="shared.css">
     <style>
-        /* ===== MARKETING POLÍTICO — NAVY THEME ===== */
+        /* ===== MARKETING POLÍTICO — NAVY & GOLD THEME ===== */
         :root {
             --bg-primary: #0A1628;
             --bg-secondary: #0E1D33;
@@ -18,11 +18,11 @@
             --text-secondary: #A8B8CC;
             --accent: #D4A843;
             --accent-dark: #B8912E;
-            --accent-glow: rgba(212, 168, 67, 0.15);
+            --accent-glow: rgba(212, 168, 67, 0.1);
             --card-bg: rgba(14, 29, 51, 0.8);
-            --card-border: rgba(232, 237, 242, 0.08);
-            --input-bg: rgba(255, 255, 255, 0.06);
-            --input-border: rgba(232, 237, 242, 0.12);
+            --card-border: rgba(232, 237, 242, 0.07);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(232, 237, 242, 0.1);
             --input-focus: #D4A843;
         }
 
@@ -31,7 +31,6 @@
             color: var(--text-primary);
         }
 
-        /* Subtle pattern */
         body::before {
             content: '';
             position: fixed;
@@ -39,16 +38,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(10, 22, 40, 0.5) 0%, transparent 50%);
+            background:
+                radial-gradient(ellipse at 15% 40%, rgba(212, 168, 67, 0.03) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 20%, rgba(10, 22, 40, 0.5) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
         .header,
         .hero,
-        .how-it-works,
-        .social-proof-section,
+        .audience-section,
+        .problem-section,
+        .deliverables-section,
+        .methodology-section,
+        .trust-section,
+        .benefits-section,
+        .faq-section,
         .final-cta,
         .footer {
             position: relative;
@@ -69,6 +74,14 @@
             color: var(--accent);
         }
 
+        .nav-links a {
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
         .header-cta {
             background: var(--accent);
             color: var(--bg-primary);
@@ -78,36 +91,15 @@
             background: var(--accent-dark);
         }
 
+        .menu-toggle span {
+            background: var(--text-primary);
+        }
+
         /* Hero */
-        .hero-image-wrapper {
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-image-wrapper::after {
-            background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
-        }
-
         .hero-badge {
-            display: inline-block;
             background: var(--accent-glow);
             color: var(--accent);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(212, 168, 67, 0.2);
-        }
-
-        .hero-headline {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.12;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            border: 1px solid rgba(212, 168, 67, 0.18);
         }
 
         .hero-headline .highlight {
@@ -115,54 +107,14 @@
         }
 
         .hero-sub {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            max-width: 90%;
-        }
-
-        /* Stats */
-        .stats-bar {
-            border-color: var(--card-border);
-        }
-
-        .stat-number {
-            color: var(--accent);
-        }
-
-        .stat-label {
             color: var(--text-secondary);
         }
 
-        /* Pain Points */
-        .pain-point {
-            border-bottom-color: var(--card-border);
-        }
-
-        .pain-point-icon {
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        .pain-point-text {
-            color: var(--text-secondary);
-        }
-
-        /* Urgency Banner */
-        .urgency-banner {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        .urgency-banner .urgency-dot {
-            background: var(--bg-primary);
-        }
-
-        /* Form Card */
+        /* Form */
         .form-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
@@ -175,7 +127,6 @@
             color: var(--text-secondary);
         }
 
-        /* Benefits */
         .form-benefits li {
             color: var(--text-secondary);
         }
@@ -185,25 +136,26 @@
             color: var(--accent);
         }
 
-        /* Inputs */
         .form-group label {
             color: var(--text-secondary);
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select {
             background: var(--input-bg);
             border-color: var(--input-border);
             color: var(--text-primary);
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             border-color: var(--input-focus);
             box-shadow: 0 0 0 3px var(--accent-glow);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.07);
         }
 
         .form-group input::placeholder {
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .form-btn {
@@ -216,7 +168,6 @@
             background: linear-gradient(135deg, var(--accent-dark), #9A7A20);
         }
 
-        /* Trust Row */
         .trust-row {
             border-top-color: var(--card-border);
         }
@@ -225,41 +176,9 @@
             color: var(--text-secondary);
         }
 
-        /* How it Works */
-        .how-it-works {
-            background: var(--bg-tertiary);
-        }
-
-        .steps-grid::before {
-            background: var(--accent);
-        }
-
-        .step-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-        }
-
-        .step-card:hover {
-            box-shadow: 0 8px 25px rgba(212, 168, 67, 0.1);
-        }
-
-        .step-number {
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        .step-title {
-            color: var(--text-primary);
-        }
-
-        .step-desc {
-            color: var(--text-secondary);
-        }
-
-        /* Social Proof */
-        .social-proof-section {
+        /* Audience */
+        .audience-section {
             background: var(--bg-secondary);
-            border-top: 1px solid var(--card-border);
         }
 
         .section-label {
@@ -270,52 +189,194 @@
             color: var(--text-primary);
         }
 
-        .carousel-card {
+        .section-sub {
+            color: var(--text-secondary);
+        }
+
+        .audience-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
         }
 
-        .carousel-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 30px var(--accent-glow);
+        .audience-card:hover {
+            box-shadow: 0 8px 30px rgba(212, 168, 67, 0.06);
+            border-color: rgba(212, 168, 67, 0.15);
         }
 
-        .carousel-avatar {
+        .audience-icon {
             background: var(--accent-glow);
             color: var(--accent);
         }
 
-        .carousel-username {
+        .audience-card h3 {
             color: var(--text-primary);
         }
 
-        .carousel-handle {
+        .audience-card p {
             color: var(--text-secondary);
         }
 
-        .carousel-body {
-            color: var(--text-secondary);
+        /* Problem */
+        .problem-section {
+            background: var(--bg-tertiary);
         }
 
-        .carousel-date {
-            color: var(--text-secondary);
-            border-top-color: var(--card-border);
+        .problem-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
         }
 
-        .carousel-btn {
+        .problem-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .problem-icon {
+            background: rgba(212, 168, 67, 0.08);
+            color: var(--accent);
+        }
+
+        .problem-item h4 {
             color: var(--text-primary);
-            border-color: var(--card-border);
         }
 
-        .carousel-btn:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
+        .problem-item p {
+            color: var(--text-secondary);
         }
 
-        .carousel-dot {
+        /* Deliverables */
+        .deliverables-section {
+            background: var(--bg-secondary);
+        }
+
+        .deliverable-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .deliverable-card:hover {
+            box-shadow: 0 8px 30px rgba(212, 168, 67, 0.06);
+            border-color: rgba(212, 168, 67, 0.12);
+        }
+
+        .deliverable-number {
+            color: var(--accent);
+        }
+
+        .deliverable-card h3 {
+            color: var(--text-primary);
+        }
+
+        .deliverable-card p {
+            color: var(--text-secondary);
+        }
+
+        .deliverable-format {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        /* Methodology */
+        .methodology-section {
+            background: var(--bg-tertiary);
+        }
+
+        .method-name {
+            color: var(--text-secondary);
+        }
+
+        .method-steps::before {
             background: var(--accent);
+        }
+
+        .method-step-number {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .method-step h3 {
+            color: var(--text-primary);
+        }
+
+        .method-step p {
+            color: var(--text-secondary);
+        }
+
+        /* Trust */
+        .trust-section {
+            background: var(--bg-secondary);
+        }
+
+        .trust-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-card:hover {
+            border-color: rgba(212, 168, 67, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-card-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .trust-card h3 {
+            color: var(--text-primary);
+        }
+
+        .trust-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Benefits */
+        .benefits-section {
+            background: var(--bg-tertiary);
+        }
+
+        .benefit-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .benefit-item h4 {
+            color: var(--text-primary);
+        }
+
+        .benefit-item p {
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--bg-secondary);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .faq-question {
+            color: var(--text-primary);
+        }
+
+        .faq-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .faq-answer-inner {
+            color: var(--text-secondary);
         }
 
         /* Final CTA */
@@ -348,8 +409,15 @@
 
         /* Footer */
         .footer {
-            color: var(--text-secondary);
             border-top-color: var(--card-border);
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+
+        .footer-copy {
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -358,108 +426,78 @@
 
     <!-- HEADER -->
     <header class="header" id="header">
-        <div class="logo">
-            <span class="velora-mark">Velora</span> <span>Strategy</span>
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <span class="velora-mark">Velora</span> <span>Strategy</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a></li>
+                    <li><a href="analise-de-mercado.html">Análise de Mercado</a></li>
+                    <li><a href="marketing-politico.html" class="active">Marketing Político</a></li>
+                </ul>
+            </nav>
         </div>
         <a href="#formulario" class="header-cta">Falar com Estrategista</a>
     </header>
 
-    <!-- HERO -->
     <main>
+
+        <!-- HERO -->
         <section class="hero" id="hero">
             <div class="hero-left">
                 <span class="hero-badge">🏛️ Marketing Político & Eleitoral</span>
                 <h1 class="hero-headline">
-                    Campanha sem estratégia<br>
-                    é dinheiro queimado.<br>
-                    <span class="highlight">Vença com método.</span>
+                    Eleição não se vence no improviso.<br>
+                    <span class="highlight">Se vence no planejamento.</span>
                 </h1>
                 <p class="hero-sub">
-                    82% dos candidatos que perdem não tinham um plano de marketing estruturado. Construímos a estratégia
-                    que posiciona, engaja e converte eleitor em voto.
+                    Posicionamento estratégico, narrativa diferenciada e presença digital planejada para
+                    candidatos e mandatários que entendem que campanha é engenharia, não improviso.
                 </p>
-
-                <div class="hero-image-wrapper">
-                    <img src="images/hero-marketing-politico.png"
-                        alt="Estrategista político em planejamento de campanha eleitoral">
-                </div>
-
-                <!-- Stats Bar -->
-                <div class="stats-bar reveal">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="45">0+</div>
-                        <div class="stat-label">Campanhas assessoradas</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="78">0%</div>
-                        <div class="stat-label">Taxa de eleição</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="12">0</div>
-                        <div class="stat-label">Estados atendidos</div>
-                    </div>
-                </div>
-
-                <!-- Pain Points (Triad) -->
-                <div class="pain-points">
-                    <div class="pain-point">
-                        <div class="pain-point-icon">📢</div>
-                        <p class="pain-point-text"><strong>Sua mensagem não chega no eleitor certo?</strong> Sem
-                            segmentação, você fala para todos e convence ninguém. Definimos tom de voz, público
-                            prioritário e canais de impacto máximo para cada nicho eleitoral.</p>
-                    </div>
-                    <div class="pain-point">
-                        <div class="pain-point-icon">💰</div>
-                        <p class="pain-point-text"><strong>Gasta muito e ganha poucos votos?</strong> Campanhas sem
-                            estratégia desperdiçam até 60% do orçamento. Otimizamos cada real com inteligência
-                            territorial e dados de intenção de voto.</p>
-                    </div>
-                    <div class="pain-point">
-                        <div class="pain-point-icon">📱</div>
-                        <p class="pain-point-text"><strong>Seus adversários dominam as redes?</strong> Quem não aparece,
-                            não é lembrado. Criamos presença digital que viraliza, constrói autoridade e transforma
-                            seguidores em cabo eleitoral.</p>
-                    </div>
-                </div>
             </div>
 
             <div class="hero-right">
-                <!-- Urgency Banner -->
-                <div class="urgency-banner">
-                    <span class="urgency-dot"></span>
-                    Planejamento antecipado = vantagem competitiva
-                </div>
-
                 <div class="form-card" id="formulario">
-                    <h2 class="form-title">Estruture sua Estratégia Eleitoral</h2>
-                    <p class="form-subtitle">Consultoria estratégica confidencial. Retorno em até 24 horas.</p>
+                    <h2 class="form-title">Estruture sua estratégia eleitoral</h2>
+                    <p class="form-subtitle">Consulta confidencial. Retorno em até 24 horas.</p>
 
-                    <!-- Benefits Checklist -->
                     <ul class="form-benefits">
-                        <li><span class="check-icon">✓</span> Diagnóstico do posicionamento atual</li>
-                        <li><span class="check-icon">✓</span> Mapa de forças e fraquezas eleitorais</li>
-                        <li><span class="check-icon">✓</span> Estratégia de comunicação personalizada</li>
-                        <li><span class="check-icon">✓</span> Plano de ação para redes sociais</li>
+                        <li><span class="check-icon">✓</span> Leitura inicial do cenário eleitoral</li>
+                        <li><span class="check-icon">✓</span> Proposta com escopo, cronograma e entregáveis</li>
+                        <li><span class="check-icon">✓</span> Total confidencialidade garantida</li>
                     </ul>
 
                     <form id="form-politico" action="#" method="POST">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
                             <input type="email" id="email" name="email" placeholder="seu@email.com" required>
                         </div>
-                        <button type="submit" class="form-btn" id="btn-enviar">Quero minha Consultoria
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cargo-politico">Cargo pretendido</label>
+                                <input type="text" id="cargo-politico" name="cargo-politico"
+                                    placeholder="Ex: Vereador, Prefeito...">
+                            </div>
+                            <div class="form-group">
+                                <label for="municipio">Município / Estado</label>
+                                <input type="text" id="municipio" name="municipio" placeholder="Ex: São Paulo - SP">
+                            </div>
+                        </div>
+                        <button type="submit" class="form-btn" id="btn-enviar">Solicitar Consultoria
                             Estratégica</button>
                     </form>
 
-                    <!-- Trust Row -->
                     <div class="trust-row">
                         <div class="trust-item">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -487,235 +525,371 @@
             </div>
         </section>
 
-        <!-- HOW IT WORKS -->
-        <section class="how-it-works reveal" id="como-funciona">
-            <p class="section-label">Como Funciona</p>
-            <h2 class="section-title">Sua campanha estruturada em 4 etapas</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Mapeamento</h3>
-                    <p class="step-desc">Analisamos o cenário eleitoral, concorrentes e os pontos fortes da sua
-                        candidatura.</p>
+        <!-- PARA QUEM É -->
+        <section class="audience-section reveal" id="para-quem">
+            <p class="section-label">Para Quem É</p>
+            <h2 class="section-title">Para quem entende que voto se conquista com planejamento.</h2>
+            <p class="section-sub">
+                Este serviço é para líderes políticos que sabem que presença, narrativa e posicionamento precisam ser
+                construídos — não improvisados.
+            </p>
+            <div class="audience-grid reveal-children">
+                <div class="audience-card">
+                    <div class="audience-icon">🎯</div>
+                    <h3>Pré-candidatos estruturando posicionamento</h3>
+                    <p>Quem está construindo presença pública antes da campanha e precisa definir narrativa, temas
+                        prioritários e estratégia de comunicação desde cedo.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Posicionamento</h3>
-                    <p class="step-desc">Definimos narrativa, tom de voz e a mensagem central que vai diferenciar você.
-                    </p>
+                <div class="audience-card">
+                    <div class="audience-icon">📣</div>
+                    <h3>Candidatos que precisam de direção</h3>
+                    <p>Quem já está em campanha mas sente que a comunicação é genérica, que o orçamento não rende e que
+                        a mensagem não diferencia dos adversários.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Plano de Ação</h3>
-                    <p class="step-desc">Estratégia completa com cronograma, canais, conteúdo e metas por segmento.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Acompanhamento</h3>
-                    <p class="step-desc">Monitoramos métricas, ajustamos estratégias e otimizamos em tempo real.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOCIAL PROOF -->
-        <section class="social-proof-section reveal" id="provas-sociais">
-            <p class="section-label">Depoimentos Reais</p>
-            <h2 class="section-title">O que publicaram sobre nosso trabalho</h2>
-
-            <div class="carousel-container">
-                <div class="carousel-track" id="carousel-track">
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">‹</button>
-                    <div class="carousel-dots" id="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Slide 1"></button>
-                        <button class="carousel-dot" aria-label="Slide 2"></button>
-                    </div>
-                    <button class="carousel-btn" id="carousel-next" aria-label="Próximo">›</button>
+                <div class="audience-card">
+                    <div class="audience-icon">🏛️</div>
+                    <h3>Mandatários construindo presença contínua</h3>
+                    <p>Quem já exerce mandato e precisa manter relevância digital, comunicar entregas e preparar terreno
+                        para reeleição ou novo projeto político.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL CTA -->
+        <!-- PROBLEMA -->
+        <section class="problem-section reveal" id="problema">
+            <p class="section-label">Sinais de Alerta</p>
+            <h2 class="section-title">Sua campanha precisa de estratégia se...</h2>
+            <p class="section-sub">
+                Estes cenários indicam que a comunicação política está operando por inércia — e isso pode custar a
+                eleição.
+            </p>
+            <div class="problem-grid reveal-children">
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Sua comunicação não diferencia</h4>
+                        <p>Seu discurso soa igual ao de qualquer outro candidato. Sem narrativa própria, o eleitor não
+                            sabe por que escolher você — e não escolhe.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Orçamento gasto sem retorno em engajamento</h4>
+                        <p>Você investe em mídia, material e eventos, mas a conversão em engajamento real e intenção de
+                            voto é desproporcional ao investimento.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Adversários ocupam o espaço digital</h4>
+                        <p>Enquanto você planeja, seus adversários já dominam as redes — construindo autoridade,
+                            narrativa e base de apoio digital ativa.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Narrativa frágil que não sustenta debate</h4>
+                        <p>Sua mensagem funciona em contextos controlados, mas não resiste ao escrutínio público, à
+                            comparação direta ou ao debate real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE ENTREGAMOS -->
+        <section class="deliverables-section reveal" id="entregaveis">
+            <p class="section-label">Entregáveis</p>
+            <h2 class="section-title">Documentos estratégicos que orientam toda a campanha.</h2>
+            <p class="section-sub">
+                Cada entregável é construído para ser usado na prática — pelo candidato, pela equipe de comunicação e
+                pelos coordenadores de campanha.
+            </p>
+            <div class="deliverables-grid reveal-children">
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 01</div>
+                    <h3>Diagnóstico de Posicionamento Eleitoral</h3>
+                    <p>Mapeamento do cenário político local: adversários, alianças, temas sensíveis, percepção pública e
+                        forças/fraquezas da candidatura.</p>
+                    <span class="deliverable-format">📄 Relatório estratégico</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 02</div>
+                    <h3>Plano de Comunicação e Narrativa</h3>
+                    <p>Definição do eixo narrativo central, tom de voz, mensagens-chave por segmento, temas de
+                        autoridade e matriz de posicionamento frente aos adversários.</p>
+                    <span class="deliverable-format">📋 Guia de comunicação</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 03</div>
+                    <h3>Roteiro de Presença Digital</h3>
+                    <p>Estratégia detalhada para redes sociais, calendário editorial, tipologia de conteúdo, frequência,
+                        tom por plataforma e diretrizes de engajamento.</p>
+                    <span class="deliverable-format">📱 Plano editorial</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 04</div>
+                    <h3>Estratégia de Segmentação Territorial</h3>
+                    <p>Mapeamento dos segmentos prioritários por região, perfil demográfico e temática — com
+                        recomendação de abordagem e alocação de esforço.</p>
+                    <span class="deliverable-format">🗺️ Mapa estratégico</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section class="methodology-section reveal" id="metodologia">
+            <p class="section-label">Metodologia</p>
+            <h2 class="section-title">Arquitetura Eleitoral</h2>
+            <p class="section-sub">
+                Um processo que trata campanha como projeto — com diagnóstico, construção, planejamento e monitoramento
+                contínuo.
+            </p>
+            <div class="method-name">Método Velora</div>
+            <div class="method-steps reveal-children">
+                <div class="method-step">
+                    <div class="method-step-number">1</div>
+                    <h3>Leitura do Cenário</h3>
+                    <p>Analisamos o contexto político, mapeamos adversários, identificamos temas sensíveis e avaliamos a
+                        percepção pública da candidatura.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">2</div>
+                    <h3>Construção de Narrativa</h3>
+                    <p>Definimos o eixo narrativo, tom de voz, mensagens-chave e posicionamento diferenciado — o que
+                        você diz, como diz e para quem diz.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">3</div>
+                    <h3>Planejamento Territorial</h3>
+                    <p>Segmentamos o eleitorado por região e perfil, definimos prioridades de presença e otimizamos a
+                        alocação de recursos de campanha.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">4</div>
+                    <h3>Estratégia de Presença</h3>
+                    <p>Montamos o plano de presença digital e offline: calendário, conteúdo, canais, frequência e
+                        métricas de acompanhamento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANÇA -->
+        <section class="trust-section reveal" id="confianca">
+            <p class="section-label">Por que a Velora</p>
+            <h2 class="section-title">Em política, confiança se constrói com seriedade — não com promessas.</h2>
+            <p class="section-sub">
+                Tratamos cada projeto político com o rigor e a discrição que ele exige.
+            </p>
+            <div class="trust-grid reveal-children">
+                <div class="trust-card">
+                    <div class="trust-card-icon">🔒</div>
+                    <h3>Confidencialidade absoluta</h3>
+                    <p>Toda informação compartilhada é tratada com sigilo total. Sua estratégia, seus dados e suas
+                        conversas nunca saem da mesa.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🎯</div>
+                    <h3>Perguntas que o plano responde</h3>
+                    <p>Qual meu diferencial eleitoral? Onde estão meus votos? Qual narrativa me posiciona melhor? Como
+                        uso o digital estrategicamente?</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📐</div>
+                    <h3>Escopo claro e realista</h3>
+                    <p>Definimos exatamente o que entregamos, quando e como. Sem promessas vagas, sem resultados
+                        inventados, sem expectativas infladas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACTOS ESTRATÉGICOS -->
+        <section class="benefits-section reveal" id="impactos">
+            <p class="section-label">Impactos Estratégicos</p>
+            <h2 class="section-title">O que muda quando a campanha tem estratégia de verdade.</h2>
+            <div class="benefits-grid reveal-children">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎤</div>
+                    <div>
+                        <h4>Posicionamento claro</h4>
+                        <p>O eleitor sabe exatamente quem você é, o que defende e por que é diferente. Sua candidatura
+                            ganha identidade própria.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💬</div>
+                    <div>
+                        <h4>Mensagem diferenciada</h4>
+                        <p>Sua comunicação deixa de ser genérica e passa a ressoar com os segmentos que realmente
+                            decidem a eleição.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <div>
+                        <h4>Presença digital estruturada</h4>
+                        <p>Redes sociais deixam de ser intuitivas e passam a seguir um plano com calendário, conteúdo e
+                            métricas de resultado.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div>
+                        <h4>Uso inteligente de recursos</h4>
+                        <p>Cada real investido em campanha passa a seguir uma lógica territorial e de segmentação — não
+                            a lógica do "investir em tudo".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section reveal" id="faq">
+            <p class="section-label">Perguntas Frequentes</p>
+            <h2 class="section-title">O que candidatos e mandatários costumam perguntar.</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Vocês fazem a campanha ou apenas o planejamento?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Nosso foco principal é a entrega da estratégia: diagnóstico, narrativa, plano de comunicação
+                            e presença digital. A execução pode ser feita pela sua equipe com base nos nossos
+                            entregáveis, ou podemos discutir acompanhamento estratégico durante a campanha — definimos
+                            isso juntos.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Funciona para cargos como vereador ou prefeito?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim. Adaptamos o escopo e a profundidade ao nível da candidatura. Vereador em cidade média
+                            tem desafios muito diferentes de deputado estadual ou prefeito de capital — e a estratégia
+                            precisa refletir isso.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quando devo começar o planejamento?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            O ideal é começar o mais cedo possível — de preferência meses antes da campanha oficial.
+                            Quanto mais tempo para construir posicionamento e presença digital, maior a vantagem
+                            competitiva no momento da eleição.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O processo é sigiloso?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Absolutamente. Confidencialidade é premissa, não diferencial. Todas as informações,
+                            conversas e documentos são tratados com sigilo total. Não divulgamos nomes de clientes,
+                            estratégias ou materiais sem autorização expressa.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Vocês entregam apenas o plano ou acompanham a execução?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Nosso produto principal é o plano estratégico completo. Mas oferecemos também a modalidade
+                            de acompanhamento, com reuniões periódicas de alinhamento, revisão de métricas e ajustes de
+                            rota. O formato é definido na conversa inicial.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
         <section class="final-cta reveal">
-            <h2 class="section-title">Eleição se ganha antes do dia da urna.</h2>
-            <p class="section-sub">Quanto antes sua estratégia estiver pronta, maior sua vantagem. Candidate-se com quem
-                entende de resultado.</p>
-            <a href="#formulario" class="final-cta-btn">Iniciar minha Estratégia Agora →</a>
+            <h2 class="section-title">Quem se prepara com estratégia chega à urna com vantagem.</h2>
+            <p class="section-sub">
+                Se você tem uma candidatura ou mandato e precisa de direção estratégica, o primeiro passo é uma conversa
+                confidencial.
+            </p>
+            <a href="#formulario" class="final-cta-btn">Solicitar Consultoria Estratégica →</a>
         </section>
+
     </main>
 
     <!-- FLOATING MOBILE CTA -->
     <div class="floating-cta" id="floating-cta">
-        <a href="#formulario">Consultoria Estratégica Gratuita →</a>
+        <a href="#formulario">Consultoria Estratégica →</a>
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Velora Strategy</a>
+                <a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a>
+                <a href="analise-de-mercado.html">Análise de Mercado</a>
+                <a href="marketing-politico.html">Marketing Político</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>
-        // ===== Header Scroll =====
+        // Header scroll
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // ===== Reveal on Scroll =====
-        const revealElements = document.querySelectorAll('.reveal, .pain-point');
-        const observer = new IntersectionObserver((entries) => {
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal, .reveal-children');
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-            });
-        }, { threshold: 0.15 });
-        revealElements.forEach(el => observer.observe(el));
-
-        // ===== Animated Counter =====
-        function animateCounters() {
-            document.querySelectorAll('.stat-number[data-target]').forEach(counter => {
-                const target = +counter.dataset.target;
-                const suffix = counter.textContent.replace(/[0-9]/g, '');
-                const duration = 1800;
-                const start = performance.now();
-                function update(now) {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    counter.textContent = Math.floor(target * eased) + suffix;
-                    if (progress < 1) requestAnimationFrame(update);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
                 }
-                requestAnimationFrame(update);
             });
-        }
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { animateCounters(); statsObserver.unobserve(entry.target); }
-            });
-        }, { threshold: 0.5 });
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar) statsObserver.observe(statsBar);
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObserver.observe(el));
 
-        // ===== Floating CTA =====
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Floating CTA
         const floatingCta = document.getElementById('floating-cta');
         const formSection = document.getElementById('formulario');
         if (floatingCta && formSection) {
             const floatObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { floatingCta.classList.toggle('visible', !entry.isIntersecting); });
+                entries.forEach(entry => {
+                    floatingCta.classList.toggle('visible', !entry.isIntersecting);
+                });
             }, { threshold: 0.3 });
             floatObserver.observe(formSection);
         }
 
-        // ===== Carousel =====
-        const track = document.getElementById('carousel-track');
-        const cards = track.querySelectorAll('.carousel-card');
-        const prevBtn = document.getElementById('carousel-prev');
-        const nextBtn = document.getElementById('carousel-next');
-        const dotsContainer = document.getElementById('carousel-dots');
-        const dots = dotsContainer.querySelectorAll('.carousel-dot');
-        let currentIndex = 0, cardsPerView = 3;
-
-        function updateCardsPerView() {
-            if (window.innerWidth <= 768) cardsPerView = 1;
-            else if (window.innerWidth <= 1024) cardsPerView = 2;
-            else cardsPerView = 3;
-        }
-        function getMaxIndex() { return Math.max(0, cards.length - cardsPerView); }
-        function moveCarousel(index) {
-            updateCardsPerView();
-            currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-            const cardWidth = cards[0].offsetWidth + 24;
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            dots.forEach((d, i) => d.classList.toggle('active', i === Math.floor(currentIndex / cardsPerView)));
-        }
-        prevBtn.addEventListener('click', () => moveCarousel(currentIndex - 1));
-        nextBtn.addEventListener('click', () => moveCarousel(currentIndex + 1));
-        dots.forEach((dot, i) => dot.addEventListener('click', () => moveCarousel(i * cardsPerView)));
-        window.addEventListener('resize', () => moveCarousel(currentIndex));
-
-        // ===== Phone Mask =====
+        // Phone mask
         document.getElementById('telefone').addEventListener('input', function (e) {
             let v = e.target.value.replace(/\D/g, '');
             if (v.length > 11) v = v.slice(0, 11);
@@ -725,15 +899,15 @@
             e.target.value = v;
         });
 
-        // ===== Form Submit =====
+        // Form submit
         document.getElementById('form-politico').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('btn-enviar');
-            btn.textContent = '✓ Enviado com sucesso!';
+            btn.textContent = '✓ Solicitação enviada!';
             btn.style.background = '#B8912E';
             btn.style.pointerEvents = 'none';
             setTimeout(() => {
-                btn.textContent = 'Quero minha Consultoria Estratégica →';
+                btn.textContent = 'Solicitar Consultoria Estratégica';
                 btn.style.background = '';
                 btn.style.pointerEvents = '';
                 this.reset();

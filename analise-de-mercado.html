@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Análise de Mercado estratégica pela Velora Strategy. Antecipe tendências, identifique oportunidades e tome decisões com visão completa do cenário competitivo.">
+        content="Análise de Mercado pela Velora Strategy. Visão competitiva, antecipação de tendências e inteligência estratégica para decisões de alto impacto.">
     <title>Análise de Mercado | Velora Strategy</title>
     <link rel="stylesheet" href="shared.css">
     <style>
-        /* ===== ANÁLISE DE MERCADO — BLACK THEME ===== */
+        /* ===== ANÁLISE DE MERCADO — DARK PREMIUM THEME ===== */
         :root {
             --bg-primary: #0D0D0D;
             --bg-secondary: #141414;
@@ -18,11 +18,11 @@
             --text-secondary: #999999;
             --accent: #00E676;
             --accent-dark: #00C853;
-            --accent-glow: rgba(0, 230, 118, 0.12);
+            --accent-glow: rgba(0, 230, 118, 0.1);
             --card-bg: rgba(20, 20, 20, 0.9);
             --card-border: rgba(255, 255, 255, 0.06);
-            --input-bg: rgba(255, 255, 255, 0.05);
-            --input-border: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(255, 255, 255, 0.04);
+            --input-border: rgba(255, 255, 255, 0.08);
             --input-focus: #00E676;
         }
 
@@ -31,7 +31,6 @@
             color: var(--text-primary);
         }
 
-        /* Subtle glow overlay */
         body::before {
             content: '';
             position: fixed;
@@ -39,16 +38,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 70% 30%, rgba(0, 230, 118, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 70%, rgba(0, 200, 83, 0.02) 0%, transparent 50%);
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(0, 230, 118, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(0, 200, 83, 0.02) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
         .header,
         .hero,
-        .how-it-works,
-        .social-proof-section,
+        .audience-section,
+        .problem-section,
+        .deliverables-section,
+        .methodology-section,
+        .trust-section,
+        .benefits-section,
+        .faq-section,
         .final-cta,
         .footer {
             position: relative;
@@ -57,7 +62,7 @@
 
         /* Header */
         .header {
-            background: rgba(13, 13, 13, 0.9);
+            background: rgba(13, 13, 13, 0.88);
             border-bottom: 1px solid var(--card-border);
         }
 
@@ -69,6 +74,14 @@
             color: var(--accent);
         }
 
+        .nav-links a {
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
         .header-cta {
             background: var(--accent);
             color: var(--bg-primary);
@@ -78,36 +91,15 @@
             background: var(--accent-dark);
         }
 
+        .menu-toggle span {
+            background: var(--text-primary);
+        }
+
         /* Hero */
-        .hero-image-wrapper {
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-image-wrapper::after {
-            background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
-        }
-
         .hero-badge {
-            display: inline-block;
             background: var(--accent-glow);
             color: var(--accent);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            margin-bottom: 1rem;
             border: 1px solid rgba(0, 230, 118, 0.15);
-        }
-
-        .hero-headline {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.12;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
         }
 
         .hero-headline .highlight {
@@ -115,50 +107,10 @@
         }
 
         .hero-sub {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            max-width: 90%;
-        }
-
-        /* Stats */
-        .stats-bar {
-            border-color: var(--card-border);
-        }
-
-        .stat-number {
-            color: var(--accent);
-        }
-
-        .stat-label {
             color: var(--text-secondary);
         }
 
-        /* Pain Points */
-        .pain-point {
-            border-bottom-color: var(--card-border);
-        }
-
-        .pain-point-icon {
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        .pain-point-text {
-            color: var(--text-secondary);
-        }
-
-        /* Urgency Banner */
-        .urgency-banner {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        .urgency-banner .urgency-dot {
-            background: var(--bg-primary);
-        }
-
-        /* Form Card */
+        /* Form */
         .form-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -175,7 +127,6 @@
             color: var(--text-secondary);
         }
 
-        /* Benefits */
         .form-benefits li {
             color: var(--text-secondary);
         }
@@ -185,25 +136,26 @@
             color: var(--accent);
         }
 
-        /* Inputs */
         .form-group label {
             color: var(--text-secondary);
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select {
             background: var(--input-bg);
             border-color: var(--input-border);
             color: var(--text-primary);
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             border-color: var(--input-focus);
             box-shadow: 0 0 0 3px var(--accent-glow);
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .form-group input::placeholder {
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .form-btn {
@@ -216,7 +168,6 @@
             background: linear-gradient(135deg, var(--accent-dark), #00A844);
         }
 
-        /* Trust Row */
         .trust-row {
             border-top-color: var(--card-border);
         }
@@ -225,41 +176,9 @@
             color: var(--text-secondary);
         }
 
-        /* How it Works */
-        .how-it-works {
-            background: var(--bg-tertiary);
-        }
-
-        .steps-grid::before {
-            background: var(--accent);
-        }
-
-        .step-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-        }
-
-        .step-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 230, 118, 0.08);
-        }
-
-        .step-number {
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        .step-title {
-            color: var(--text-primary);
-        }
-
-        .step-desc {
-            color: var(--text-secondary);
-        }
-
-        /* Social Proof */
-        .social-proof-section {
+        /* Audience */
+        .audience-section {
             background: var(--bg-secondary);
-            border-top: 1px solid var(--card-border);
         }
 
         .section-label {
@@ -270,52 +189,194 @@
             color: var(--text-primary);
         }
 
-        .carousel-card {
+        .section-sub {
+            color: var(--text-secondary);
+        }
+
+        .audience-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
         }
 
-        .carousel-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 30px var(--accent-glow);
+        .audience-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 230, 118, 0.06);
+            border-color: rgba(0, 230, 118, 0.15);
         }
 
-        .carousel-avatar {
+        .audience-icon {
             background: var(--accent-glow);
             color: var(--accent);
         }
 
-        .carousel-username {
+        .audience-card h3 {
             color: var(--text-primary);
         }
 
-        .carousel-handle {
+        .audience-card p {
             color: var(--text-secondary);
         }
 
-        .carousel-body {
-            color: var(--text-secondary);
+        /* Problem */
+        .problem-section {
+            background: var(--bg-tertiary);
         }
 
-        .carousel-date {
-            color: var(--text-secondary);
-            border-top-color: var(--card-border);
+        .problem-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
         }
 
-        .carousel-btn {
+        .problem-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .problem-icon {
+            background: rgba(255, 152, 0, 0.1);
+            color: #FF9800;
+        }
+
+        .problem-item h4 {
             color: var(--text-primary);
-            border-color: var(--card-border);
         }
 
-        .carousel-btn:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
+        .problem-item p {
+            color: var(--text-secondary);
         }
 
-        .carousel-dot {
+        /* Deliverables */
+        .deliverables-section {
+            background: var(--bg-secondary);
+        }
+
+        .deliverable-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .deliverable-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 230, 118, 0.06);
+            border-color: rgba(0, 230, 118, 0.12);
+        }
+
+        .deliverable-number {
+            color: var(--accent);
+        }
+
+        .deliverable-card h3 {
+            color: var(--text-primary);
+        }
+
+        .deliverable-card p {
+            color: var(--text-secondary);
+        }
+
+        .deliverable-format {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        /* Methodology */
+        .methodology-section {
+            background: var(--bg-tertiary);
+        }
+
+        .method-name {
+            color: var(--text-secondary);
+        }
+
+        .method-steps::before {
             background: var(--accent);
+        }
+
+        .method-step-number {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .method-step h3 {
+            color: var(--text-primary);
+        }
+
+        .method-step p {
+            color: var(--text-secondary);
+        }
+
+        /* Trust */
+        .trust-section {
+            background: var(--bg-secondary);
+        }
+
+        .trust-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-card:hover {
+            border-color: rgba(0, 230, 118, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-card-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .trust-card h3 {
+            color: var(--text-primary);
+        }
+
+        .trust-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Benefits */
+        .benefits-section {
+            background: var(--bg-tertiary);
+        }
+
+        .benefit-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .benefit-item h4 {
+            color: var(--text-primary);
+        }
+
+        .benefit-item p {
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--bg-secondary);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .faq-question {
+            color: var(--text-primary);
+        }
+
+        .faq-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .faq-answer-inner {
+            color: var(--text-secondary);
         }
 
         /* Final CTA */
@@ -348,8 +409,15 @@
 
         /* Footer */
         .footer {
-            color: var(--text-secondary);
             border-top-color: var(--card-border);
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+
+        .footer-copy {
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -358,107 +426,76 @@
 
     <!-- HEADER -->
     <header class="header" id="header">
-        <div class="logo">
-            <span class="velora-mark">Velora</span> <span>Strategy</span>
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <span class="velora-mark">Velora</span> <span>Strategy</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a></li>
+                    <li><a href="analise-de-mercado.html" class="active">Análise de Mercado</a></li>
+                    <li><a href="marketing-politico.html">Marketing Político</a></li>
+                </ul>
+            </nav>
         </div>
         <a href="#formulario" class="header-cta">Falar com Analista</a>
     </header>
 
-    <!-- HERO -->
     <main>
+
+        <!-- HERO -->
         <section class="hero" id="hero">
             <div class="hero-left">
                 <span class="hero-badge">📈 Análise de Mercado</span>
                 <h1 class="hero-headline">
-                    Quem não entende o mercado<br>
-                    é engolido por ele.<br>
-                    <span class="highlight">Antecipe-se.</span>
+                    Você conhece seu mercado —<br>
+                    <span class="highlight">ou apenas opera nele?</span>
                 </h1>
                 <p class="hero-sub">
-                    Empresas que investem em análise de mercado crescem 2.5x mais rápido que a média do setor. Tenha a
-                    visão completa que seus concorrentes ainda não têm.
+                    Visão competitiva, antecipação de tendências e inteligência aplicada para líderes que
+                    precisam enxergar além do óbvio antes de tomar decisões de alto impacto.
                 </p>
-
-                <div class="hero-image-wrapper">
-                    <img src="images/hero-analise-mercado.png"
-                        alt="Executivo analisando dashboards de inteligência de mercado em ambiente premium">
-                </div>
-
-                <!-- Stats Bar -->
-                <div class="stats-bar reveal">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="200">0+</div>
-                        <div class="stat-label">Análises entregues</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="35">0+</div>
-                        <div class="stat-label">Setores mapeados</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="94">0%</div>
-                        <div class="stat-label">Precisão nas previsões</div>
-                    </div>
-                </div>
-
-                <!-- Pain Points (Triad) -->
-                <div class="pain-points">
-                    <div class="pain-point">
-                        <div class="pain-point-icon">🔍</div>
-                        <p class="pain-point-text"><strong>Oportunidades passam despercebidas?</strong> A cada
-                            trimestre, empresas sem análise de mercado perdem em média 3 oportunidades de crescimento.
-                            Mapeamos cada brecha competitiva do seu setor que você pode explorar antes dos outros.</p>
-                    </div>
-                    <div class="pain-point">
-                        <div class="pain-point-icon">⚡</div>
-                        <p class="pain-point-text"><strong>Mudanças de mercado te pegam de surpresa?</strong> 68% das
-                            empresas reagem tarde demais às mudanças do setor. Antecipe tendências com inteligência
-                            preditiva, cenários estratégicos e alertas de risco em tempo real.</p>
-                    </div>
-                    <div class="pain-point">
-                        <div class="pain-point-icon">🧭</div>
-                        <p class="pain-point-text"><strong>Não sabe onde investir seus recursos?</strong> Investimento
-                            sem direção é custo, não estratégia. Direcione capital e esforço exatamente onde o retorno é
-                            máximo, com clareza absoluta.</p>
-                    </div>
-                </div>
             </div>
 
             <div class="hero-right">
-                <!-- Urgency Banner -->
-                <div class="urgency-banner">
-                    <span class="urgency-dot"></span>
-                    Análise completa com preço especial este mês
-                </div>
-
                 <div class="form-card" id="formulario">
-                    <h2 class="form-title">Receba seu Diagnóstico Competitivo</h2>
-                    <p class="form-subtitle">Análise preliminar gratuita do seu posicionamento no mercado.</p>
+                    <h2 class="form-title">Receba uma leitura do seu cenário</h2>
+                    <p class="form-subtitle">Análise preliminar sem custo. Retorno em até 24 horas.</p>
 
-                    <!-- Benefits Checklist -->
                     <ul class="form-benefits">
-                        <li><span class="check-icon">✓</span> Mapeamento de oportunidades no seu setor</li>
-                        <li><span class="check-icon">✓</span> Análise de 5 concorrentes diretos</li>
-                        <li><span class="check-icon">✓</span> Identificação de tendências emergentes</li>
-                        <li><span class="check-icon">✓</span> Relatório com recomendações estratégicas</li>
+                        <li><span class="check-icon">✓</span> Leitura inicial do seu posicionamento competitivo</li>
+                        <li><span class="check-icon">✓</span> Proposta com escopo, prazo e entregáveis</li>
+                        <li><span class="check-icon">✓</span> Conversa estratégica sem compromisso</li>
                     </ul>
 
                     <form id="form-analise" action="#" method="POST">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                            <label for="email">E-mail corporativo</label>
+                            <input type="email" id="email" name="email" placeholder="seu@empresa.com" required>
                         </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="setor">Setor de atuação</label>
+                                <input type="text" id="setor" name="setor" placeholder="Ex: Tecnologia, Varejo...">
+                            </div>
                         </div>
-                        <button type="submit" class="form-btn" id="btn-enviar">Quero meu Diagnóstico Gratuito</button>
+                        <button type="submit" class="form-btn" id="btn-enviar">Solicitar Leitura de Cenário</button>
                     </form>
 
-                    <!-- Trust Row -->
                     <div class="trust-row">
                         <div class="trust-item">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -486,236 +523,372 @@
             </div>
         </section>
 
-        <!-- HOW IT WORKS -->
-        <section class="how-it-works reveal" id="como-funciona">
-            <p class="section-label">Como Funciona</p>
-            <h2 class="section-title">Do briefing ao insight em 4 etapas</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Briefing</h3>
-                    <p class="step-desc">Entendemos seu setor, objetivos e os desafios específicos da sua empresa.</p>
+        <!-- PARA QUEM É -->
+        <section class="audience-section reveal" id="para-quem">
+            <p class="section-label">Para Quem É</p>
+            <h2 class="section-title">Para quem precisa enxergar o mercado com mais profundidade.</h2>
+            <p class="section-sub">
+                Análise de mercado faz sentido quando você precisa de visão competitiva, direção para crescimento ou
+                clareza sobre o que está mudando ao seu redor.
+            </p>
+            <div class="audience-grid reveal-children">
+                <div class="audience-card">
+                    <div class="audience-icon">🌐</div>
+                    <h3>Empresas em mercados dinâmicos</h3>
+                    <p>Setores que mudam rápido exigem monitoramento constante. Se seu mercado se transforma mais rápido
+                        do que você se adapta, é hora de analisar.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Inteligência</h3>
-                    <p class="step-desc">Coletamos e cruzamos dados de mercado, concorrência, tendências e
-                        comportamento.</p>
+                <div class="audience-card">
+                    <div class="audience-icon">📍</div>
+                    <h3>Gestores planejando expansão</h3>
+                    <p>Expandir para um novo mercado, região ou segmento exige entender o terreno competitivo antes de
+                        alocar recursos.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Análise</h3>
-                    <p class="step-desc">Transformamos dados em cenários estratégicos, riscos e oportunidades claras.
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Ação</h3>
-                    <p class="step-desc">Você recebe um relatório executivo com plano de ação prioritizado e métricas.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOCIAL PROOF -->
-        <section class="social-proof-section reveal" id="provas-sociais">
-            <p class="section-label">Depoimentos Reais</p>
-            <h2 class="section-title">O que nossos clientes publicaram sobre nós</h2>
-
-            <div class="carousel-container">
-                <div class="carousel-track" id="carousel-track">
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">𝕏</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Twitter]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="carousel-card-header">
-                            <div class="carousel-avatar">?</div>
-                            <div class="carousel-user-info">
-                                <div class="carousel-username">Nome do Cliente</div>
-                                <div class="carousel-handle">@handle</div>
-                            </div>
-                            <div class="carousel-platform">📷</div>
-                        </div>
-                        <div class="carousel-body">
-                            <p class="placeholder-text">[Espaço reservado para depoimento real — Instagram]</p>
-                        </div>
-                        <div class="carousel-date">Data da publicação</div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">‹</button>
-                    <div class="carousel-dots" id="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Slide 1"></button>
-                        <button class="carousel-dot" aria-label="Slide 2"></button>
-                    </div>
-                    <button class="carousel-btn" id="carousel-next" aria-label="Próximo">›</button>
+                <div class="audience-card">
+                    <div class="audience-icon">⚖️</div>
+                    <h3>Líderes tomando decisões de alto impacto</h3>
+                    <p>Quando a decisão é irreversível ou envolve alto investimento, uma análise robusta é a diferença
+                        entre avanço e exposição ao risco.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL CTA -->
+        <!-- PROBLEMA -->
+        <section class="problem-section reveal" id="problema">
+            <p class="section-label">Sinais de Alerta</p>
+            <h2 class="section-title">Sua visão de mercado pode estar incompleta se...</h2>
+            <p class="section-sub">
+                Estes cenários indicam que você está operando com uma visão parcial — e isso já pode estar custando
+                oportunidades.
+            </p>
+            <div class="problem-grid reveal-children">
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Você reage em vez de antecipar</h4>
+                        <p>Mudanças no mercado te pegam de surpresa. Quando você percebe uma tendência, seus
+                            concorrentes já se posicionaram.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Não sabe onde concorrentes estão investindo</h4>
+                        <p>Você observa movimentos da concorrência sem entender a lógica estratégica por trás — e perde
+                            a chance de se diferenciar.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Cresce sem conhecer o teto</h4>
+                        <p>Seu negócio cresce, mas você não sabe qual é o tamanho real do mercado, onde está a saturação
+                            e onde ainda há espaço.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔸</div>
+                    <div>
+                        <h4>Opera com relatórios desatualizados</h4>
+                        <p>Suas decisões estratégicas se baseiam em dados de meses ou anos atrás, em um cenário que já
+                            mudou significativamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE ENTREGAMOS -->
+        <section class="deliverables-section reveal" id="entregaveis">
+            <p class="section-label">Entregáveis</p>
+            <h2 class="section-title">Inteligência competitiva traduzida em documentos aplicáveis.</h2>
+            <p class="section-sub">
+                Cada entregável é desenhado para ir direto à mesa de decisão — com dados, cenários e recomendações que
+                orientam a ação estratégica.
+            </p>
+            <div class="deliverables-grid reveal-children">
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 01</div>
+                    <h3>Leitura de Cenário Competitivo</h3>
+                    <p>Panorama do setor com mapeamento de forças, fraquezas, ameaças e oportunidades aplicado ao seu
+                        posicionamento específico.</p>
+                    <span class="deliverable-format">📄 Relatório analítico</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 02</div>
+                    <h3>Mapa de Forças do Setor</h3>
+                    <p>Identificação dos principais players, dinâmicas de competição, barreiras de entrada e movimentos
+                        recentes que afetam seu mercado.</p>
+                    <span class="deliverable-format">📊 Mapeamento visual</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 03</div>
+                    <h3>Análise de Tendências e Movimentos</h3>
+                    <p>Vetores de mudança macro e micro no seu setor — tecnológicos, comportamentais, regulatórios e
+                        competitivos — com projeção de impacto.</p>
+                    <span class="deliverable-format">📈 Projeção estratégica</span>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-number">Entregável 04</div>
+                    <h3>Relatório Executivo com Recomendações</h3>
+                    <p>Síntese executiva com cenários estratégicos, riscos mapeados e plano de ação prioritizado —
+                        pronto para orientar decisões concretas.</p>
+                    <span class="deliverable-format">🎯 Plano de ação</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section class="methodology-section reveal" id="metodologia">
+            <p class="section-label">Metodologia</p>
+            <h2 class="section-title">Inteligência Competitiva Aplicada</h2>
+            <p class="section-sub">
+                Um processo analítico rigoroso que transforma dados brutos em visão estratégica. Da imersão no setor à
+                recomendação prática.
+            </p>
+            <div class="method-name">Método Velora</div>
+            <div class="method-steps reveal-children">
+                <div class="method-step">
+                    <div class="method-step-number">1</div>
+                    <h3>Imersão</h3>
+                    <p>Mergulhamos no seu setor, modelo de negócio e contexto competitivo para formular as perguntas
+                        certas.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">2</div>
+                    <h3>Mapeamento</h3>
+                    <p>Coletamos dados de múltiplas fontes — concorrentes, mercado, tendências, regulação — e
+                        organizamos o cenário.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">3</div>
+                    <h3>Modelagem</h3>
+                    <p>Cruzamos variáveis, identificamos padrões e construímos cenários estratégicos com diferentes
+                        graus de risco.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">4</div>
+                    <h3>Recomendação</h3>
+                    <p>Traduzimos a análise em direção estratégica: o que fazer, onde focar e como se posicionar com
+                        vantagem.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANÇA -->
+        <section class="trust-section reveal" id="confianca">
+            <p class="section-label">Por que a Velora</p>
+            <h2 class="section-title">Autoridade se demonstra com raciocínio, não com estatísticas soltas.</h2>
+            <p class="section-sub">
+                Construímos confiança mostrando como pensamos, não prometendo resultados que ainda não temos como
+                garantir.
+            </p>
+            <div class="trust-grid reveal-children">
+                <div class="trust-card">
+                    <div class="trust-card-icon">🧠</div>
+                    <h3>Demonstração de raciocínio</h3>
+                    <p>Antes de qualquer entrega, você entende nossa lógica analítica. Se o raciocínio faz sentido, a
+                        entrega também fará.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📊</div>
+                    <h3>Frameworks de análise expostos</h3>
+                    <p>Usamos frameworks como análise de forças competitivas, mapeamento de cenários e modelagem de
+                        tendências — sempre transparentes.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🔬</div>
+                    <h3>Critérios claros de avaliação</h3>
+                    <p>Cada análise segue critérios documentados. Você sabe exatamente o que estamos avaliando e por que
+                        cada variável importa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACTOS ESTRATÉGICOS -->
+        <section class="benefits-section reveal" id="impactos">
+            <p class="section-label">Impactos Estratégicos</p>
+            <h2 class="section-title">O que muda quando você enxerga o mercado com profundidade.</h2>
+            <div class="benefits-grid reveal-children">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔭</div>
+                    <div>
+                        <h4>Visão de cenário</h4>
+                        <p>Você passa a operar com uma visão panorâmica do mercado — forças, riscos, espaços e
+                            movimentos — e não apenas com a perspectiva interna.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <div>
+                        <h4>Timing de decisão</h4>
+                        <p>Saber quando agir é tão importante quanto saber o que fazer. Análise de tendências ajuda a
+                            antecipar janelas de oportunidade.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <div>
+                        <h4>Alocação inteligente de recursos</h4>
+                        <p>Com clareza sobre onde o mercado está seguindo, você direciona investimento para onde o
+                            retorno tem mais probabilidade de acontecer.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div>
+                        <h4>Vantagem de posicionamento</h4>
+                        <p>Quem entende o mercado primeiro, se posiciona primeiro. E quem se posiciona primeiro, define
+                            as regras do jogo competitivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section reveal" id="faq">
+            <p class="section-label">Perguntas Frequentes</p>
+            <h2 class="section-title">O que você precisa saber antes de contratar.</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Qual a diferença entre análise de mercado e pesquisa de mercado?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            A análise de mercado foca em inteligência competitiva: entender o cenário macro,
+                            concorrentes, tendências e dinâmicas do setor usando dados secundários e modelagem. A
+                            pesquisa de mercado foca em dados primários: ouvir o consumidor, mapear comportamentos,
+                            validar hipóteses. São complementares, mas atendem perguntas distintas.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Vocês analisam concorrentes específicos?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim. No escopo definimos quais concorrentes diretos e indiretos entram na análise, e
+                            avaliamos posicionamento, estratégia de comunicação, presença digital e diferenciais — tudo
+                            com fontes abertas e inteligência competitiva legal.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Serve para empresas de pequeno porte?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim. Empresas menores frequentemente têm mais a ganhar com uma análise bem feita, porque
+                            operam com menos margem para erro. Adaptamos a profundidade e o investimento ao porte e
+                            contexto da empresa.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Qual o formato da entrega final?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Entregamos relatórios executivos em formato digital (PDF + apresentação), com sumários
+                            visuais, gráficos, tabelas comparativas e recomendações em linguagem de negócio. O objetivo
+                            é que o material chegue pronto para a mesa de decisão.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        E se meu setor for muito nichado ou específico?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Setores nichados são, na verdade, onde a análise de mercado mais agrega valor — porque a
+                            informação disponível publicamente é limitada e a inteligência diferenciada pesa mais. Na
+                            conversa inicial, avaliamos juntos o escopo possível.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
         <section class="final-cta reveal">
-            <h2 class="section-title">O mercado não espera. Você também não deveria.</h2>
-            <p class="section-sub">Empresas que nos consultaram identificaram em média 5 oportunidades ocultas no
-                primeiro mês. Veja o que você está perdendo.</p>
-            <a href="#formulario" class="final-cta-btn">Solicitar Diagnóstico Gratuito →</a>
+            <h2 class="section-title">Quem entende o mercado primeiro, decide melhor.</h2>
+            <p class="section-sub">
+                Se você precisa de visão competitiva para tomar decisões com mais segurança, o primeiro passo é uma
+                conversa estratégica.
+            </p>
+            <a href="#formulario" class="final-cta-btn">Solicitar Leitura de Cenário →</a>
         </section>
+
     </main>
 
     <!-- FLOATING MOBILE CTA -->
     <div class="floating-cta" id="floating-cta">
-        <a href="#formulario">Quero meu Diagnóstico Gratuito →</a>
+        <a href="#formulario">Solicitar Leitura de Cenário →</a>
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Velora Strategy</a>
+                <a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a>
+                <a href="analise-de-mercado.html">Análise de Mercado</a>
+                <a href="marketing-politico.html">Marketing Político</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>
-        // ===== Header Scroll =====
+        // Header scroll
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // ===== Reveal on Scroll =====
-        const revealElements = document.querySelectorAll('.reveal, .pain-point');
-        const observer = new IntersectionObserver((entries) => {
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal, .reveal-children');
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-            });
-        }, { threshold: 0.15 });
-        revealElements.forEach(el => observer.observe(el));
-
-        // ===== Animated Counter =====
-        function animateCounters() {
-            document.querySelectorAll('.stat-number[data-target]').forEach(counter => {
-                const target = +counter.dataset.target;
-                const suffix = counter.textContent.replace(/[0-9]/g, '');
-                const duration = 1800;
-                const start = performance.now();
-                function update(now) {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    counter.textContent = Math.floor(target * eased) + suffix;
-                    if (progress < 1) requestAnimationFrame(update);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
                 }
-                requestAnimationFrame(update);
             });
-        }
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { animateCounters(); statsObserver.unobserve(entry.target); }
-            });
-        }, { threshold: 0.5 });
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar) statsObserver.observe(statsBar);
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObserver.observe(el));
 
-        // ===== Floating CTA =====
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Floating CTA
         const floatingCta = document.getElementById('floating-cta');
         const formSection = document.getElementById('formulario');
         if (floatingCta && formSection) {
             const floatObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { floatingCta.classList.toggle('visible', !entry.isIntersecting); });
+                entries.forEach(entry => {
+                    floatingCta.classList.toggle('visible', !entry.isIntersecting);
+                });
             }, { threshold: 0.3 });
             floatObserver.observe(formSection);
         }
 
-        // ===== Carousel =====
-        const track = document.getElementById('carousel-track');
-        const cards = track.querySelectorAll('.carousel-card');
-        const prevBtn = document.getElementById('carousel-prev');
-        const nextBtn = document.getElementById('carousel-next');
-        const dotsContainer = document.getElementById('carousel-dots');
-        const dots = dotsContainer.querySelectorAll('.carousel-dot');
-        let currentIndex = 0, cardsPerView = 3;
-
-        function updateCardsPerView() {
-            if (window.innerWidth <= 768) cardsPerView = 1;
-            else if (window.innerWidth <= 1024) cardsPerView = 2;
-            else cardsPerView = 3;
-        }
-        function getMaxIndex() { return Math.max(0, cards.length - cardsPerView); }
-        function moveCarousel(index) {
-            updateCardsPerView();
-            currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-            const cardWidth = cards[0].offsetWidth + 24;
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            dots.forEach((d, i) => d.classList.toggle('active', i === Math.floor(currentIndex / cardsPerView)));
-        }
-        prevBtn.addEventListener('click', () => moveCarousel(currentIndex - 1));
-        nextBtn.addEventListener('click', () => moveCarousel(currentIndex + 1));
-        dots.forEach((dot, i) => dot.addEventListener('click', () => moveCarousel(i * cardsPerView)));
-        window.addEventListener('resize', () => moveCarousel(currentIndex));
-
-        // ===== Phone Mask =====
+        // Phone mask
         document.getElementById('telefone').addEventListener('input', function (e) {
             let v = e.target.value.replace(/\D/g, '');
             if (v.length > 11) v = v.slice(0, 11);
@@ -725,15 +898,15 @@
             e.target.value = v;
         });
 
-        // ===== Form Submit =====
+        // Form submit
         document.getElementById('form-analise').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('btn-enviar');
-            btn.textContent = '✓ Enviado com sucesso!';
+            btn.textContent = '✓ Solicitação enviada!';
             btn.style.background = '#00C853';
             btn.style.pointerEvents = 'none';
             setTimeout(() => {
-                btn.textContent = 'Quero meu Diagnóstico Gratuito →';
+                btn.textContent = 'Solicitar Leitura de Cenário';
                 btn.style.background = '';
                 btn.style.pointerEvents = '';
                 this.reset();

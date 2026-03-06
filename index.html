@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Velora Strategy — Consultoria estratégica em pesquisa de mercado, análise competitiva e marketing político. Inteligência aplicada para decisões que importam.">
+    <title>Velora Strategy — Inteligência Estratégica</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* ===== INSTITUCIONAL — DARK PREMIUM THEME ===== */
+        :root {
+            --bg-primary: #0C0C14;
+            --bg-secondary: #111119;
+            --bg-tertiary: #0A0A10;
+            --text-primary: #E4E4EC;
+            --text-secondary: #8E8EA0;
+            --accent: #5B8DEF;
+            --accent-dark: #4A7BD4;
+            --accent-glow: rgba(91, 141, 239, 0.1);
+            --card-bg: rgba(17, 17, 25, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --input-bg: rgba(255, 255, 255, 0.04);
+            --input-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 25% 20%, rgba(91, 141, 239, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 80%, rgba(91, 141, 239, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .header,
+        .hero,
+        .vision-section,
+        .services-section,
+        .methodology-section,
+        .trust-section,
+        .final-cta,
+        .footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(12, 12, 20, 0.85);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .logo {
+            color: var(--text-primary);
+        }
+
+        .logo .velora-mark {
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-cta {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .header-cta:hover {
+            background: var(--accent-dark);
+        }
+
+        .menu-toggle span {
+            background: var(--text-primary);
+        }
+
+        /* Hero Institutional */
+        .hero-institutional {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 160px 6% 100px;
+        }
+
+        .hero-institutional .hero-badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(91, 141, 239, 0.15);
+        }
+
+        .hero-institutional .hero-headline {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 3.2rem;
+        }
+
+        .hero-institutional .hero-headline .highlight {
+            color: var(--accent);
+        }
+
+        .hero-institutional .hero-sub {
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            background: var(--accent);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.92rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(91, 141, 239, 0.3);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Vision */
+        .vision-section {
+            background: var(--bg-secondary);
+        }
+
+        .section-label {
+            color: var(--accent);
+        }
+
+        .section-title {
+            color: var(--text-primary);
+        }
+
+        .section-sub {
+            color: var(--text-secondary);
+        }
+
+        .vision-item {
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            background: var(--card-bg);
+        }
+
+        .vision-item h3 {
+            color: var(--text-primary);
+        }
+
+        .vision-item p {
+            color: var(--text-secondary);
+        }
+
+        /* Services */
+        .services-section {
+            background: var(--bg-primary);
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-icon {
+            background: var(--accent-glow);
+        }
+
+        .service-card h3 {
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+        }
+
+        .service-link {
+            color: var(--accent);
+        }
+
+        /* Service accent colors */
+        .service-card.pesquisa .service-icon {
+            background: rgba(0, 201, 219, 0.12);
+            color: #00C9DB;
+        }
+
+        .service-card.pesquisa .service-link {
+            color: #00C9DB;
+        }
+
+        .service-card.analise .service-icon {
+            background: rgba(0, 230, 118, 0.12);
+            color: #00E676;
+        }
+
+        .service-card.analise .service-link {
+            color: #00E676;
+        }
+
+        .service-card.politico .service-icon {
+            background: rgba(212, 168, 67, 0.12);
+            color: #D4A843;
+        }
+
+        .service-card.politico .service-link {
+            color: #D4A843;
+        }
+
+        /* Methodology */
+        .methodology-section {
+            background: var(--bg-tertiary);
+        }
+
+        .method-name {
+            color: var(--text-secondary);
+        }
+
+        .method-steps::before {
+            background: var(--accent);
+        }
+
+        .method-step-number {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .method-step h3 {
+            color: var(--text-primary);
+        }
+
+        .method-step p {
+            color: var(--text-secondary);
+        }
+
+        /* Trust */
+        .trust-section {
+            background: var(--bg-secondary);
+        }
+
+        .trust-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .trust-card-icon {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .trust-card h3 {
+            color: var(--text-primary);
+        }
+
+        .trust-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--bg-primary);
+        }
+
+        .final-cta .section-title {
+            color: var(--text-primary);
+        }
+
+        .final-cta .section-sub {
+            color: var(--text-secondary);
+        }
+
+        .final-cta-btn {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .final-cta-btn:hover {
+            background: var(--accent-dark);
+        }
+
+        /* Footer */
+        .footer {
+            border-top-color: var(--card-border);
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+
+        .footer-copy {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-institutional .hero-headline {
+                font-size: 2rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="logo">
+                <span class="velora-mark">Velora</span> <span>Strategy</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a></li>
+                    <li><a href="analise-de-mercado.html">Análise de Mercado</a></li>
+                    <li><a href="marketing-politico.html">Marketing Político</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="#servicos" class="header-cta">Nossos Serviços</a>
+    </header>
+
+    <main>
+
+        <!-- HERO INSTITUTIONAL -->
+        <section class="hero-institutional" id="hero">
+            <span class="hero-badge">Consultoria Estratégica</span>
+            <h1 class="hero-headline">
+                Inteligência estratégica para<br>
+                <span class="highlight">decisões que importam.</span>
+            </h1>
+            <p class="hero-sub">
+                Pesquisa, análise e estratégia aplicadas com método. Para empresas e líderes
+                que precisam de clareza antes de decidir.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#servicos" class="cta-primary">Conheça nossos serviços</a>
+                <a href="#como-pensamos" class="cta-secondary">Como pensamos</a>
+            </div>
+        </section>
+
+        <!-- COMO PENSAMOS -->
+        <section class="vision-section reveal" id="como-pensamos">
+            <p class="section-label">Como Pensamos</p>
+            <h2 class="section-title">Decisões melhores nascem de informações melhores.</h2>
+            <p class="section-sub">
+                A Velora Strategy existe para reduzir a distância entre intuição e evidência. Nosso trabalho é traduzir
+                dados em direção estratégica.
+            </p>
+            <div class="vision-grid reveal-children">
+                <div class="vision-item">
+                    <h3>Clareza antes de ação</h3>
+                    <p>Toda decisão estratégica começa com uma pergunta bem formulada. Antes de recomendar qualquer
+                        caminho, mapeamos o cenário com rigor.</p>
+                </div>
+                <div class="vision-item">
+                    <h3>Método, não opinião</h3>
+                    <p>Trabalhamos com frameworks estruturados, coleta de dados e análise cruzada. Cada recomendação é
+                        sustentada por evidência, não por achismo.</p>
+                </div>
+                <div class="vision-item">
+                    <h3>Entregáveis aplicáveis</h3>
+                    <p>Nosso compromisso é entregar documentos que orientam decisões reais. Relatórios que vão para a
+                        mesa do decisor, não para a gaveta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section class="services-section reveal" id="servicos">
+            <p class="section-label">Serviços</p>
+            <h2 class="section-title">Três frentes. Uma lógica: inteligência aplicada.</h2>
+            <p class="section-sub">
+                Cada serviço resolve um tipo diferente de problema, mas todos seguem o mesmo princípio: entender antes
+                de agir.
+            </p>
+            <div class="services-grid reveal-children">
+                <!-- Pesquisa de Mercado -->
+                <div class="service-card pesquisa">
+                    <div class="service-icon">📊</div>
+                    <h3>Pesquisa de Mercado</h3>
+                    <p>Para quem precisa entender seu público, validar hipóteses e tomar decisões de investimento com
+                        base em dados reais — não em suposições.</p>
+                    <a href="pesquisa-de-mercado.html" class="service-link">Saber mais →</a>
+                </div>
+                <!-- Análise de Mercado -->
+                <div class="service-card analise">
+                    <div class="service-icon">📈</div>
+                    <h3>Análise de Mercado</h3>
+                    <p>Para quem precisa de visão competitiva, antecipação de tendências e clareza sobre onde o mercado
+                        está indo — antes que os concorrentes cheguem.</p>
+                    <a href="analise-de-mercado.html" class="service-link">Saber mais →</a>
+                </div>
+                <!-- Marketing Político -->
+                <div class="service-card politico">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Marketing Político & Eleitoral</h3>
+                    <p>Para quem precisa de posicionamento estratégico, narrativa diferenciada e presença digital
+                        inteligente — da pré-campanha à eleição.</p>
+                    <a href="marketing-politico.html" class="service-link">Saber mais →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section class="methodology-section reveal" id="metodologia">
+            <p class="section-label">Metodologia</p>
+            <h2 class="section-title">Nosso processo segue uma lógica clara.</h2>
+            <p class="section-sub">
+                Independente do serviço, a abordagem da Velora Strategy segue três pilares que garantem consistência e
+                aplicabilidade.
+            </p>
+            <div class="method-steps reveal-children">
+                <div class="method-step">
+                    <div class="method-step-number">1</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Entendemos o cenário, contexto, objetivos e as perguntas que precisam ser respondidas.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">2</div>
+                    <h3>Coleta & Análise</h3>
+                    <p>Reunimos e cruzamos dados de múltiplas fontes com frameworks estruturados de inteligência.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">3</div>
+                    <h3>Síntese</h3>
+                    <p>Transformamos dados brutos em cenários, riscos, oportunidades e recomendações claras.</p>
+                </div>
+                <div class="method-step">
+                    <div class="method-step-number">4</div>
+                    <h3>Direção Estratégica</h3>
+                    <p>Entregamos relatórios executivos com plano de ação prioritizado e orientação prática.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIANÇA -->
+        <section class="trust-section reveal" id="confianca">
+            <p class="section-label">Nossos Compromissos</p>
+            <h2 class="section-title">O que você pode esperar ao trabalhar conosco.</h2>
+            <p class="section-sub">
+                Não prometemos milagres. Prometemos método, clareza e entregáveis que fazem diferença na mesa de
+                decisão.
+            </p>
+            <div class="trust-grid reveal-children">
+                <div class="trust-card">
+                    <div class="trust-card-icon">🔍</div>
+                    <h3>Transparência total</h3>
+                    <p>Você sabe exatamente o que vai receber, em quanto tempo, e como cada etapa funciona. Sem
+                        surpresas.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📋</div>
+                    <h3>Entregáveis concretos</h3>
+                    <p>Todo projeto resulta em documentos aplicáveis: relatórios, matrizes, mapas e recomendações com
+                        plano de ação.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🎯</div>
+                    <h3>Foco em decisão</h3>
+                    <p>Não entregamos dados soltos. Entregamos direção. Cada análise é orientada para uma decisão
+                        estratégica específica.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🔒</div>
+                    <h3>Confidencialidade</h3>
+                    <p>Todas as informações compartilhadas são tratadas com sigilo absoluto. Sua estratégia é só sua.
+                    </p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">⚡</div>
+                    <h3>Agilidade com rigor</h3>
+                    <p>Trabalhamos com prazos definidos e comunicação proativa. Você acompanha cada etapa do processo.
+                    </p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📐</div>
+                    <h3>Método proprietário</h3>
+                    <p>Cada serviço segue uma metodologia própria, testada e documentada. Não é opinião — é análise
+                        estruturada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="final-cta reveal">
+            <h2 class="section-title">Qual é o seu próximo desafio estratégico?</h2>
+            <p class="section-sub">
+                Seja entender um mercado, mapear concorrentes ou estruturar uma campanha — o primeiro passo é uma
+                conversa.
+            </p>
+            <a href="#servicos" class="final-cta-btn">Ver serviços disponíveis</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a>
+                <a href="analise-de-mercado.html">Análise de Mercado</a>
+                <a href="marketing-politico.html">Marketing Político</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal, .reveal-children');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+
+</html>
