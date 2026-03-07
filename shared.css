@@ -123,6 +123,23 @@ a {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+.cta-destaque {
+  background: #FF6D00 !important;
+  color: #ffffff !important;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-destaque:hover {
+  background: #FF8E33 !important;
+  box-shadow: 0 4px 15px rgba(255, 109, 0, 0.4);
+  transform: translateY(-2px);
+}
+
 /* Mobile menu toggle */
 .menu-toggle {
   display: none;

@@ -256,30 +256,30 @@
 
         /* Service accent colors */
         .service-card.pesquisa .service-icon {
-            background: rgba(0, 201, 219, 0.12);
-            color: #00C9DB;
+            background: rgba(0, 123, 255, 0.12);
+            color: #00A3FF;
         }
 
         .service-card.pesquisa .service-link {
-            color: #00C9DB;
+            color: #00A3FF;
         }
 
         .service-card.analise .service-icon {
-            background: rgba(0, 230, 118, 0.12);
-            color: #00E676;
+            background: rgba(0, 123, 255, 0.12);
+            color: #00A3FF;
         }
 
         .service-card.analise .service-link {
-            color: #00E676;
+            color: #00A3FF;
         }
 
         .service-card.politico .service-icon {
-            background: rgba(212, 168, 67, 0.12);
-            color: #D4A843;
+            background: rgba(0, 123, 255, 0.12);
+            color: #00A3FF;
         }
 
         .service-card.politico .service-link {
-            color: #D4A843;
+            color: #00A3FF;
         }
 
         /* Methodology */
@@ -371,6 +371,23 @@
             color: var(--text-secondary);
         }
 
+        .cta-destaque {
+            background: #FF6D00 !important;
+            color: #ffffff !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-destaque:hover {
+            background: #FF8E33 !important;
+            box-shadow: 0 4px 15px rgba(255, 109, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .hero-institutional .hero-headline {
                 font-size: 2rem;
@@ -402,39 +419,87 @@
                 <ul class="nav-links">
                     <li><a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a></li>
                     <li><a href="analise-de-mercado.html">Análise de Mercado</a></li>
-                    <li><a href="marketing-politico.html">Marketing Político</a></li>
+                    <li><a href="marketing-politico.html">Política</a></li>
+                    <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#fale-conosco">Fale Conosco</a></li>
                 </ul>
             </nav>
         </div>
-        <a href="#servicos" class="header-cta">Nossos Serviços</a>
+        <a href="#fale-conosco" class="header-cta cta-destaque">Solicitar proposta</a>
     </header>
 
     <main>
 
         <!-- HERO INSTITUTIONAL -->
-        <section class="hero-institutional" id="hero">
-            <span class="hero-badge">Inteligência Estratégica Aplicada</span>
-            <h1 class="hero-headline">
-                Velora Strategy.<br>
-                <span class="highlight">Evidência acima de opinião.</span>
-            </h1>
-            <p class="hero-sub">
-                Estratégia de mercado e política baseada em dados reais, investigação de campo e inteligência
-                competitiva. Tiramos o "achismo" da mesa para você decidir com clareza.
-            </p>
-            <div class="hero-cta-group">
-                <a href="#servicos" class="cta-primary">Explorar Soluções</a>
-                <a href="#como-pensamos" class="cta-secondary">Entender a Metodologia</a>
+        <section class="hero" id="hero">
+            <img src="images/consultant_pointing.png" alt="Estrategista apontando"
+                style="position: absolute; bottom: 0; left: 15%; max-height: 90vh; z-index: 1; opacity: 0.95; pointer-events: none; filter: brightness(0.85);" />
+            <div class="hero-left" style="z-index: 2; padding-left: 2rem;">
+                <span class="hero-badge"
+                    style="background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(0, 230, 118, 0.15);">Inteligência
+                    Estratégica Aplicada</span>
+                <h1 class="hero-headline" style="font-size: 3.2rem;">
+                    Crescer sem direção é arriscado.<br>
+                    Crescer sem método é caro.<br>
+                    <span class="highlight" style="color: var(--accent);">Crescer sem estratégia é fatal.</span>
+                </h1>
+                <p class="hero-sub"
+                    style="text-align: left; margin-left: 0; max-width: 580px; color: var(--text-secondary);">
+                    A Velora Strategy transforma dados, pesquisa e inteligência competitiva em <b
+                        style="color: var(--text-primary);">decisões blindadas</b>. Reduza a margem de erro no mercado
+                    ou no cenário político e execute com previsibilidade plena.
+                </p>
+                <div class="hero-cta-group" style="justify-content: flex-start;">
+                    <a href="#fale-conosco" class="cta-primary">Falar com um estrategista</a>
+                    <a href="#como-pensamos" class="cta-secondary">Entender a Metodologia</a>
+                </div>
+            </div>
+
+            <div class="hero-right" style="z-index: 2;">
+                <div class="form-card"
+                    style="background: rgba(10, 28, 31, 0.85); border: 1px solid var(--card-border); backdrop-filter: blur(10px);">
+                    <h3 class="form-title" style="color: var(--text-primary);">Iniciar Diagnóstico</h3>
+                    <p class="form-subtitle" style="color: var(--text-secondary);">Preencha para falar com um
+                        estrategista sênior.</p>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label style="color: var(--text-primary);">Nome Completo</label>
+                            <input type="text" placeholder="Seu nome" required
+                                style="background: var(--input-bg); border-color: var(--input-border); color: #fff;">
+                        </div>
+                        <div class="form-group">
+                            <label style="color: var(--text-primary);">E-mail Profissional</label>
+                            <input type="email" placeholder="seu@email.com.br" required
+                                style="background: var(--input-bg); border-color: var(--input-border); color: #fff;">
+                        </div>
+                        <div class="form-group">
+                            <label style="color: var(--text-primary);">Telefone / WhatsApp</label>
+                            <input type="tel" placeholder="(00) 00000-0000" required
+                                style="background: var(--input-bg); border-color: var(--input-border); color: #fff;">
+                        </div>
+                        <button type="submit" class="form-btn cta-destaque"
+                            style="width: 100%; padding: 1rem 2rem; font-size: 1rem;">Solicitar Contato</button>
+                        <p
+                            style="font-size: 0.75rem; color: var(--text-secondary); text-align: center; margin-top: 1rem;">
+                            Seus dados estão seguros.
+                        </p>
+                    </form>
+                </div>
             </div>
         </section>
 
         <!-- COMO PENSAMOS -->
         <section class="vision-section reveal" id="como-pensamos">
             <p class="section-label">Como Pensamos</p>
-            <h2 class="section-title">O mercado pune quem decide de olhos fechados.</h2>
+            <h2 class="section-title">
+                Decidir no escuro custa caro.<br>
+                Decidir sem dados custa mais.<br>
+                <span class="highlight" style="color: var(--accent);">Decidir sem estratégia custa tudo.</span>
+            </h2>
             <p class="section-sub">
-                A Velora Strategy existe para reduzir o espaço entre a intuição do líder e a realidade brutal do
-                mercado. Nós traduzimos dados em vantagem competitiva.
+                O mercado sempre pune quem lidera de olhos fechados. Nós existimos para encurtar a distância entre a sua
+                intuição e a <b style="color: var(--text-primary);">realidade brutal</b> do seu cenário. Nossa entrega é
+                substituir a opinião por <b style="color: var(--text-primary);">capacidade analítica</b> aplicável.
             </p>
             <div class="vision-grid reveal-children">
                 <div class="vision-item">
@@ -480,12 +545,19 @@
                         vulnerabilidades de concorrentes e achar oceanos azuis.</p>
                     <a href="analise-de-mercado.html" class="service-link">Ver Escopo →</a>
                 </div>
-                <!-- Marketing Político -->
+                <!-- Política -->
                 <div class="service-card politico">
                     <div class="service-icon">🏛️</div>
-                    <h3>Arquitetura Política</h3>
-                    <p>Posicionamento eleitoral blindado. Para candidatos de risco zero que precisam modular narrativa e
-                        alocar verba onde o voto realmente está.</p>
+                    <h3>Política</h3>
+                    <p
+                        style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4;">
+                        Mercados mudam.<br>Cenários políticos impactam.<br><span style="color: var(--accent);">Dados
+                            revelam tendências.</span>
+                    </p>
+                    <p>Um projeto de poder não sobrevive de paixão, mas de <b
+                            style="color: var(--text-primary);">arquitetura bem formatada</b>. Trabalhamos com pesquisa
+                        e análise fria para alinhar a sua narrativa onde o voto e o apoio estratégico realmente estão.
+                    </p>
                     <a href="marketing-politico.html" class="service-link">Ver Escopo →</a>
                 </div>
             </div>
@@ -522,57 +594,271 @@
                 </div>
             </div>
         </section>
+        <!-- QUEM SOMOS -->
+        <section class="vision-section reveal" id="quem-somos"
+            style="background: var(--bg-tertiary); padding: 100px 6%;">
+            <p class="section-label">Quem Somos</p>
+            <h2 class="section-title">Muito além do diagnóstico. Visão focada em método.</h2>
+            <div
+                style="max-width: 800px; margin: 0 auto 3rem; text-align: center; color: var(--text-secondary); line-height: 1.8;">
+                <p>A Velora Strategy é uma consultoria de inteligência formada por uma visão pragmática: nenhum líder
+                    deveria basear seu futuro no "achismo". Aplicamos métodos de pesquisa e análise rigorosa para
+                    empresas e lideranças políticas que não têm espaço para errar. Nosso compromisso inegociável é com o
+                    <b style="color: var(--text-primary);">repertório baseado em fatos</b>, unindo grande capacidade
+                    analítica com a coragem de mostrar os cenários reais, entregando a clareza necessária para o
+                    crescimento.</p>
+            </div>
 
-        <!-- CONFIANÇA -->
-        <section class="trust-section reveal" id="confianca">
-            <p class="section-label">Manifesto Velora</p>
-            <h2 class="section-title">Nossos Compromissos (O que NÃO fazemos)</h2>
-            <p class="section-sub">
-                Se construímos inteligência baseada em transparência, nosso acordo comercial também tem que ser.
-            </p>
-            <div class="trust-grid reveal-children">
-                <div class="trust-card">
-                    <div class="trust-card-icon">🚫</div>
-                    <h3>Sem "Gurus" e Hype</h3>
-                    <p>Não vendemos fórmulas mágicas. Não temos um botão secreto que dobra o faturamento. O que
-                        entregamos é suor, cruzamento de dados e método estressado no campo.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-card-icon">🤐</div>
-                    <h3>Sem Exposição do Cliente</h3>
-                    <p>Em projetos estratégicos e políticos, o portfólio não é nossa vitrine, é o nosso segredo. Seu
-                        nome não será usado para nós ganharmos likes ou vendermos cursos.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-card-icon">📄</div>
-                    <h3>Sem Documentos Mortos</h3>
-                    <p>Nenhuma entrega da Velora tem 200 páginas de jargões inúteis que ninguém da sua equipe consegue
-                        acionar. Nossos mapas vêm com a faca e o queijo para cortar.</p>
+            <div class="vision-grid reveal-children"
+                style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Team Member Card Placeholder -->
+                <div class="vision-item"
+                    style="text-align: center; padding: 2.5rem 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                    <div
+                        style="width: 120px; height: 120px; border-radius: 50%; background: var(--input-bg); margin: 0 auto 1.5rem; overflow: hidden; border: 2px solid var(--card-border);">
+                        <!-- <img src="images/team_member_1.jpg" alt="Foto Equipe" style="width: 100%; height: 100%; object-fit: cover;"> -->
+                    </div>
+                    <h3 style="margin-bottom: 0.2rem;">Nome do Sócio</h3>
+                    <p
+                        style="color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 1px; text-transform: uppercase;">
+                        Estrategista Principal</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Profissional focado em estruturação de
+                        cenários competitivos. Traz no currículo métodos reais aplicados à tomada de decisão de
+                        corporações, com forte compromisso com a análise orientada a resultados.</p>
                 </div>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="final-cta reveal">
-            <h2 class="section-title">Qual é o seu próximo desafio estratégico?</h2>
+        <!-- COMPROMISSOS & FAQ -->
+        <section class="trust-section reveal" id="compromissos">
+            <p class="section-label">Manifesto Velora</p>
+            <h2 class="section-title">Nossos compromissos com você</h2>
             <p class="section-sub">
-                Seja entender um mercado, mapear concorrentes ou estruturar uma campanha — o primeiro passo é uma
-                conversa.
+                Se construímos inteligência baseada em transparência, nosso acordo comercial também tem que ser.
             </p>
-            <a href="#servicos" class="final-cta-btn">Ver serviços disponíveis</a>
+            <div class="trust-grid reveal-children" style="margin-bottom: 5rem;">
+                <div class="trust-card">
+                    <div class="trust-card-icon">🤝</div>
+                    <h3>Sutileza e Ética</h3>
+                    <p>Focamos em soluções tangíveis. Nossa entrega é baseada em método comprovado, cruzamento rigoroso
+                        de <b style="color: var(--text-primary);">dados</b> e compromisso absoluto com a sua escalada.
+                    </p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🛡️</div>
+                    <h3>Proteção e Sigilo</h3>
+                    <p>Sua <b style="color: var(--text-primary);">estratégia</b> e seu cenário de mercado estão seguros
+                        conosco. Trabalhamos nos bastidores para que você seja o protagonista dos resultados no board ou
+                        nas urnas.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🎯</div>
+                    <h3>Clareza na Comunicação</h3>
+                    <p>Entregáveis ágeis e mapas táticos objetivos. Desenhamos a roda em linguagem reta, projetando
+                        cenários <b style="color: var(--text-primary);">acionáveis</b> com a faca e o queijo para
+                        cortar.</p>
+                </div>
+            </div>
+
+            <div class="faq-container reveal">
+                <h3
+                    style="text-align: center; font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-primary);">
+                    Perguntas Frequentes</h3>
+
+                <div class="faq-item"
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); margin-bottom: 1rem; cursor: pointer;"
+                    onclick="this.classList.toggle('active')">
+                    <button class="faq-question" style="color: var(--text-primary);">
+                        Que dados nós coletamos?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Nós coletamos estritamente os dados necessários para embasar seu posicionamento. Isso
+                            engloba informações demográficas validadas de público e cruzamentos abertos no mercado.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item"
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); margin-bottom: 1rem; cursor: pointer;"
+                    onclick="this.classList.toggle('active')">
+                    <button class="faq-question" style="color: var(--text-primary);">
+                        Como nós usamos suas informações?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Suas informações sensíveis são processadas em ambiente fechado para gerar relatórios,
+                            direcionar a análise de competição e encontrar vácuos de oportunidades para seu produto ou
+                            campanha.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item"
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); cursor: pointer;"
+                    onclick="this.classList.toggle('active')">
+                    <button class="faq-question" style="color: var(--text-primary);">
+                        Como nós trabalhamos junto com você?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Trabalhamos através de sprints e escopo contínuo, iniciando com um diagnóstico preciso,
+                            seguindo para fase de captação e terminando em direção executável direta, numa mesa de
+                            discussão lado a lado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FALE CONOSCO -->
+        <section class="final-cta reveal" id="fale-conosco">
+            <p class="section-label" style="margin-bottom: 2rem;">Entre em contato</p>
+            <h2 class="section-title">
+                Opinião gera dúvida. Intuição gera risco.<br>
+                <span style="color: var(--accent);">Análise gera clareza.</span>
+            </h2>
+            <p class="section-sub">
+                Seja para entender um novo mercado, mapear concorrentes vitais ou montar um projeto político de longo
+                prazo: <b style="color: var(--text-primary);">o primeiro pilar do método</b> é uma conversa franca
+                conosco.
+            </p>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 3rem auto 0; text-align: left;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 2.5rem; border-radius: 16px;">
+                    <h3
+                        style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+                        Informações de Contato</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.9rem;">
+                        Entre em contato com a equipe da Velora. Vamos entender seu cenário e mostrar o mapa de rota.
+                        Atendimento acolhedor, transparente e direto ao ponto.
+                    </p>
+                    <ul style="list-style: none; margin: 0; padding: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span style="font-size: 1.2rem;">📍</span>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 0.2rem;">Endereço</strong>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Endereço Real</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span style="font-size: 1.2rem;">📞</span>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 0.2rem;">Telefone</strong>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">+55 (DDD)
+                                    0000-0000</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="font-size: 1.2rem;">✉️</span>
+                            <div>
+                                <strong
+                                    style="display: block; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 0.2rem;">E-mail</strong>
+                                <span
+                                    style="font-size: 0.85rem; color: var(--text-secondary);">estrategia@velora.com.br</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 2.5rem; border-radius: 16px;">
+                    <form action="#" method="POST">
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label
+                                style="color: var(--text-primary); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem;">Nome
+                                Completo</label>
+                            <input type="text" placeholder="Seu nome" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 10px; background: var(--input-bg); border: 1px solid var(--input-border); color: #fff; font-family: 'Inter', sans-serif;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label
+                                style="color: var(--text-primary); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem;">E-mail
+                                Profissional</label>
+                            <input type="email" placeholder="seu@email.com.br" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 10px; background: var(--input-bg); border: 1px solid var(--input-border); color: #fff; font-family: 'Inter', sans-serif;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label
+                                style="color: var(--text-primary); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem;">Telefone
+                                / WhatsApp</label>
+                            <input type="tel" placeholder="(00) 00000-0000" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 10px; background: var(--input-bg); border: 1px solid var(--input-border); color: #fff; font-family: 'Inter', sans-serif;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label
+                                style="color: var(--text-primary); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem;">Mensagem</label>
+                            <textarea placeholder="Como podemos ajudar na sua estratégia?" rows="4" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 10px; background: var(--input-bg); border: 1px solid var(--input-border); color: #fff; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="cta-destaque"
+                            style="width: 100%; font-size: 1rem; padding: 1rem; border-radius: 10px; font-weight: 700;">Iniciar
+                            o Diagnóstico</button>
+                    </form>
+                </div>
+            </div>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="pesquisa-de-mercado.html">Pesquisa de Mercado</a>
-                <a href="analise-de-mercado.html">Análise de Mercado</a>
-                <a href="marketing-politico.html">Marketing Político</a>
+    <footer class="footer" style="padding: 4rem 6% 2rem;">
+        <div class="footer-content"
+            style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--card-border);">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <span class="velora-mark">Velora</span> <span>Strategy</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; max-width: 300px;">
+                    A Velora Strategy estrutura inteligência analítica e posicionamento para empresas e lideranças que
+                    exigem clareza. Crescimento fundado em evidência.
+                </p>
             </div>
-            <p class="footer-copy">&copy; 2026 Velora Strategy. Todos os direitos reservados.</p>
+
+            <div class="footer-col" style="padding-top: 0.5rem;">
+                <h4
+                    style="color: var(--text-primary); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 1rem;">
+                    A Velora</h4>
+                <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0;">
+                    <a href="#quem-somos" style="font-size: 0.9rem;">Quem Somos</a>
+                    <a href="#compromissos" style="font-size: 0.9rem;">Missão & Compromissos</a>
+                    <a href="#fale-conosco" style="font-size: 0.9rem;">Fale Conosco</a>
+                </div>
+            </div>
+
+            <div class="footer-col" style="padding-top: 0.5rem;">
+                <h4
+                    style="color: var(--text-primary); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 1rem;">
+                    O que fazemos</h4>
+                <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0;">
+                    <a href="pesquisa-de-mercado.html" style="font-size: 0.9rem;">Pesquisa de Mercado</a>
+                    <a href="analise-de-mercado.html" style="font-size: 0.9rem;">Análise de Mercado</a>
+                    <a href="marketing-politico.html" style="font-size: 0.9rem;">Política</a>
+                </div>
+            </div>
+
+            <div class="footer-col" style="padding-top: 0.5rem;">
+                <h4
+                    style="color: var(--text-primary); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 1rem;">
+                    Social</h4>
+                <div class="footer-socials" style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">LinkedIn</a>
+                    <a href="#" style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div
+            style="max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p class="footer-copy" style="margin: 0; font-size: 0.8rem;">&copy; 2026 Velora Strategy. Todos os direitos
+                reservados.</p>
+            <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 0;">CNPJ: 00.000.000/0000-00</p>
         </div>
     </footer>
 
