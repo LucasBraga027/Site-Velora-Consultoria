@@ -262,9 +262,7 @@
       color: var(--text-secondary);
     }
 
-    .method-steps::before {
-      background: var(--accent);
-    }
+
 
     .method-step-number {
       background: var(--accent-glow);
@@ -425,7 +423,9 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-left reveal">
+      <img src="images/hero-pesquisa-mercado.png" alt="Pesquisadora apontando"
+        style="position: absolute; bottom: 0; left: 15%; max-height: 90vh; z-index: 1; opacity: 0.95; pointer-events: none; filter: brightness(0.85);" />
+      <div class="hero-left reveal" style="z-index: 2; padding-left: 2rem;">
         <span class="hero-badge">📊 Pesquisa de Mercado</span>
         <h1 class="hero-headline">
           O mercado já tem as respostas.<br>
@@ -435,16 +435,11 @@
           Valide teses, entenda o comportamento real do consumidor e embase decisões de alto risco com dados primários –
           antes de comprometer seu caixa.
         </p>
-        <!-- Imagem Apontando -->
-        <div class="hero-pointer-person"
-          style="margin-top: 2.5rem; border-radius: 20px; overflow: hidden; max-width: 480px; box-shadow: 0 15px 45px rgba(0,0,0,0.4); position: relative; border: 1px solid rgba(255,255,255,0.05);">
-          <img src="images/mulher_sorrindo_pesquisa.jpg" alt="Pesquisadora apontando para o formulário"
-            style="width: 100%; display: block;">
-        </div>
       </div>
 
-      <div class="hero-right">
-        <div class="form-card" id="formulario">
+      <div class="hero-right" style="z-index: 2;">
+        <div class="form-card" id="formulario"
+          style="background: rgba(10, 28, 31, 0.85); border: 1px solid var(--card-border); backdrop-filter: blur(10px);">
           <h2 class="form-title">Solicite uma proposta personalizada</h2>
           <p class="form-subtitle">Resposta em até 24 horas. Sem compromisso.</p>
 

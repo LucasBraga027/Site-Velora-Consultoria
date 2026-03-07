@@ -284,9 +284,7 @@
             color: var(--text-secondary);
         }
 
-        .method-steps::before {
-            background: var(--accent);
-        }
+
 
         .method-step-number {
             background: var(--accent-glow);
@@ -447,27 +445,23 @@
 
         <!-- HERO -->
         <section class="hero" id="hero">
-            <div class="hero-left reveal">
+            <img src="images/hero-analise-mercado.png" alt="Analista apontando"
+                style="position: absolute; bottom: 0; left: 15%; max-height: 90vh; z-index: 1; opacity: 0.95; pointer-events: none; filter: brightness(0.85);" />
+            <div class="hero-left reveal" style="z-index: 2; padding-left: 2rem;">
                 <span class="hero-badge">📈 Análise de Mercado</span>
                 <h1 class="hero-headline">
-                    Antecipar movimentos é a c única vantagem competitiva que<br>
+                    Antecipar movimentos é a única vantagem competitiva que<br>
                     <span class="highlight">não pode ser copiada.</span>
                 </h1>
                 <p class="hero-sub">
                     Monitoramento estratégico de concorrentes, tendências e lacunas de mercado. Um radar ligado para o
                     que realmente impacta o seu setor.
                 </p>
-
-                <!-- Imagem Apontando -->
-                <div class="hero-pointer-person"
-                    style="margin-top: 2.5rem; border-radius: 20px; overflow: hidden; max-width: 480px; box-shadow: 0 15px 45px rgba(0,0,0,0.4); position: relative; border: 1px solid rgba(255,255,255,0.05);">
-                    <img src="images/analyst_pointing.png" alt="Analista apontando para o formulário"
-                        style="width: 100%; display: block;">
-                </div>
             </div>
 
-            <div class="hero-right">
-                <div class="form-card" id="formulario">
+            <div class="hero-right" style="z-index: 2;">
+                <div class="form-card" id="formulario"
+                    style="background: rgba(10, 28, 31, 0.85); border: 1px solid var(--card-border); backdrop-filter: blur(10px);">
                     <h2 class="form-title">Receba uma leitura do seu cenário</h2>
                     <p class="form-subtitle">Análise preliminar sem custo. Retorno em até 24 horas.</p>
 
