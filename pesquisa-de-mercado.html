@@ -16,14 +16,14 @@
       --bg-tertiary: #071618;
       --text-primary: #E4E4EC;
       --text-secondary: #8E8EA0;
-      --accent: #00E676;
-      --accent-dark: #00C853;
-      --accent-glow: rgba(0, 230, 118, 0.1);
+      --accent: #00BFFF;
+      --accent-dark: #0088CC;
+      --accent-glow: rgba(0, 191, 255, 0.15);
       --card-bg: rgba(10, 28, 31, 0.85);
       --card-border: rgba(255, 255, 255, 0.06);
       --input-bg: rgba(255, 255, 255, 0.04);
       --input-border: rgba(255, 255, 255, 0.08);
-      --input-focus: #00E676;
+      --input-focus: #00BFFF;
     }
 
     body {
@@ -39,8 +39,8 @@
       width: 100%;
       height: 100%;
       background:
-        radial-gradient(ellipse at 70% 20%, rgba(0, 230, 118, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(0, 200, 83, 0.03) 0%, transparent 50%);
+        radial-gradient(ellipse at 70% 20%, rgba(0, 191, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 136, 204, 0.03) 0%, transparent 50%);
       pointer-events: none;
       z-index: 0;
     }
@@ -177,8 +177,8 @@
     }
 
     .audience-card:hover {
-      box-shadow: 0 8px 30px rgba(0, 180, 198, 0.08);
-      border-color: rgba(0, 180, 198, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 191, 255, 0.08);
+      border-color: rgba(0, 191, 255, 0.2);
     }
 
     .audience-icon {
@@ -232,8 +232,8 @@
     }
 
     .deliverable-card:hover {
-      box-shadow: 0 8px 30px rgba(0, 180, 198, 0.08);
-      border-color: rgba(0, 180, 198, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 191, 255, 0.08);
+      border-color: rgba(0, 191, 255, 0.2);
     }
 
     .deliverable-number {
@@ -289,7 +289,7 @@
 
     .trust-card:hover {
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-      border-color: rgba(0, 180, 198, 0.15);
+      border-color: rgba(0, 191, 255, 0.15);
     }
 
     .trust-card-icon {
@@ -423,7 +423,7 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <img src="images/new_hero_pesquisa.png" alt="Pesquisadora"
+      <img src="images/researcher_pointing.png" alt="Pesquisadora"
         style="position: absolute; top: 0; left: 0; width: 62%; height: 100%; z-index: 0; opacity: 0.95; pointer-events: none; object-fit: contain; object-position: right bottom; mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);" />
       <div class="hero-left reveal" style="z-index: 2; padding-left: 2rem;">
         <span class="hero-badge">📊 Pesquisa de Mercado</span>
@@ -461,8 +461,8 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="email">E-mail corporativo</label>
-              <input type="email" id="email" name="email" placeholder="seu@empresa.com" required>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
             </div>
             <div class="form-row">
               <div class="form-group">

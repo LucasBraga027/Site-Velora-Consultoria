@@ -16,14 +16,14 @@
             --bg-tertiary: #071618;
             --text-primary: #E4E4EC;
             --text-secondary: #8E8EA0;
-            --accent: #00E676;
-            --accent-dark: #00C853;
-            --accent-glow: rgba(0, 230, 118, 0.1);
+            --accent: #00BFFF;
+            --accent-dark: #0088CC;
+            --accent-glow: rgba(0, 191, 255, 0.15);
             --card-bg: rgba(10, 28, 31, 0.85);
             --card-border: rgba(255, 255, 255, 0.06);
             --input-bg: rgba(255, 255, 255, 0.04);
             --input-border: rgba(255, 255, 255, 0.08);
-            --input-focus: #00E676;
+            --input-focus: #00BFFF;
         }
 
         body {
@@ -39,8 +39,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at 15% 40%, rgba(0, 230, 118, 0.04) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 20%, rgba(0, 200, 83, 0.03) 0%, transparent 50%);
+                radial-gradient(ellipse at 15% 40%, rgba(0, 191, 255, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 20%, rgba(0, 136, 204, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -97,9 +97,11 @@
 
         /* Hero */
         .hero-badge {
-            background: var(--accent-glow);
-            color: var(--accent);
-            border: 1px solid rgba(212, 168, 67, 0.18);
+            background: rgba(0, 136, 204, 0.3);
+            color: #00BFFF;
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            backdrop-filter: blur(8px);
+            font-weight: 700;
         }
 
         .hero-headline .highlight {
