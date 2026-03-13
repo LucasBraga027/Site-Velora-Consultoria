@@ -1291,3 +1291,7 @@ a {
   white-space: nowrap;
   border-width: 0;
 }
+
+.text-accent {
+  color: var(--accent) !important;
+}
