@@ -1192,6 +1192,16 @@ a {
     gap: 3rem;
   }
 
+  .hero > img {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0.15 !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 90%) !important;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 90%) !important;
+  }
+
   .hero-right {
     max-width: 100%;
     width: 100%;
@@ -1254,6 +1264,14 @@ a {
     gap: 0;
   }
 
+  .form-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .method-card {
+    padding: 1.5rem;
+  }
+
   .section-title {
     font-size: 1.7rem;
   }
@@ -1310,6 +1328,23 @@ a {
 
   .section-title {
     font-size: 1.45rem;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .audience-section,
+  .problem-section,
+  .deliverables-section,
+  .methodology-section,
+  .trust-section,
+  .benefits-section,
+  .faq-section,
+  .final-cta,
+  .services-section,
+  .vision-section {
+    padding: 50px 5%;
   }
 }
 
