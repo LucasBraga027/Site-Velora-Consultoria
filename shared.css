@@ -1448,4 +1448,31 @@ a {
 
 .text-accent {
   color: var(--accent) !important;
+}
+
+/* ===== FORM VALIDATION HINTS ===== */
+.validation-hint {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+  padding-left: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.form-group input:focus + .validation-hint,
+.form-group textarea:focus + .validation-hint,
+.form-group select:focus + .validation-hint {
+  display: block;
+}
+
+.form-group input:not(:placeholder-shown):invalid + .validation-hint,
+.form-group textarea:not(:placeholder-shown):invalid + .validation-hint {
+  color: #ff4d4d;
+}
+
+.form-group input:not(:placeholder-shown):valid + .validation-hint,
+.form-group textarea:not(:placeholder-shown):valid + .validation-hint {
+  color: #00A844;
 }
