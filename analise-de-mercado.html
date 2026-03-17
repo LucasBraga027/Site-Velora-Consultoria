@@ -480,7 +480,7 @@
                         <li><span class="check-icon">✓</span> Conversa estratégica sem compromisso</li>
                     </ul>
 
-                    <form id="form-analise" action="#" method="POST">
+                    <form id="form-analise" action="https://formspree.io/f/mreyynyn" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
@@ -1034,14 +1034,44 @@
         document.getElementById('form-analise').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('btn-enviar');
-            btn.textContent = '✓ Solicitação enviada!';
-            btn.style.background = '#00C853';
+            const originalText = btn.textContent;
+
+            // Formatar mensagem para WhatsApp
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const empresa = document.getElementById('empresa').value || 'Não informado';
+            const setor = document.getElementById('setor').value || 'Não informado';
+
+            const textoZap = `Olá Velora! Tenho interesse em uma Análise de Cenário.%0A%0A*Nome:* ${nome}%0A*Telefone:* ${telefone}%0A*E-mail:* ${email}%0A*Empresa:* ${empresa}%0A*Setor:* ${setor}`;
+            const urlZap = `https://wa.me/5532985066027?text=${textoZap}`;
+
+            btn.textContent = '✓ Enviando para e-mail...';
+            btn.style.background = '#00A844';
             btn.style.pointerEvents = 'none';
-            setTimeout(() => {
-                btn.textContent = 'Solicitar Leitura de Cenário';
+
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    btn.textContent = '✓ Sucesso! Abrindo WhatsApp...';
+                    setTimeout(() => {
+                        window.open(urlZap, '_blank');
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.style.pointerEvents = '';
+                        this.reset();
+                    }, 1500);
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            }).catch(error => {
+                alert('Houve um erro no processamento. Tente novamente ou contate-nos pelo botão de WhatsApp.');
+                btn.textContent = originalText;
                 btn.style.background = '';
                 btn.style.pointerEvents = '';
-                this.reset();
             }, 3000);
         });
     </script>

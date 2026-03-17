@@ -801,7 +801,7 @@
 
                 <div
                     style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 2.5rem; border-radius: 16px;">
-                    <form action="#" method="POST">
+                    <form id="form-diagnostico" action="https://formspree.io/f/mreyynyn" method="POST">
                         <div class="form-group" style="margin-bottom: 1rem;">
                             <label
                                 style="color: var(--text-primary); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem;">Nome
@@ -833,7 +833,7 @@
                                 style="width: 100%; padding: 0.8rem 1rem; border-radius: 10px; background: var(--input-bg); border: 1px solid var(--input-border); color: #fff; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
                             <span class="validation-hint" style="display: none; font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.4rem; padding-left: 0.5rem; font-weight: 500;">Formule sua mensagem (mínimo de 10 caracteres)</span>
                         </div>
-                        <button type="submit" class="cta-destaque"
+                        <button type="submit" id="btn-enviar-principal" class="cta-destaque"
                             style="width: 100%; font-size: 1rem; padding: 1rem; border-radius: 10px; font-weight: 700;">Iniciar
                             o Diagnóstico</button>
                     </form>
@@ -958,6 +958,55 @@
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
             }, 8000);
+        }
+
+        // Form submit principal
+        const formDiag = document.getElementById('form-diagnostico');
+        if (formDiag) {
+            formDiag.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const btn = document.getElementById('btn-enviar-principal');
+                const originalText = btn.textContent;
+                
+                // Formatar mensagem para WhatsApp
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const telefone = document.getElementById('telefone').value;
+                const mensagem = document.getElementById('mensagem').value;
+                
+                const textoZap = `Olá Velora! Gostaria de um Diagnóstico Estratégico.%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*Telefone:* ${telefone}%0A*Mensagem:* ${mensagem}`;
+                const urlZap = `https://wa.me/5532985066027?text=${textoZap}`;
+
+                // Mostrar feedback visual
+                btn.textContent = '✓ Enviando...';
+                btn.style.background = '#00A844';
+                btn.style.pointerEvents = 'none';
+
+                // Enviar para Formspree via AJAX
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        btn.textContent = '✓ Quase lá! Abrindo WhatsApp...';
+                        setTimeout(() => {
+                            window.open(urlZap, '_blank');
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                            btn.style.pointerEvents = '';
+                            this.reset();
+                        }, 1500);
+                    } else {
+                        throw new Error('Erro no envio');
+                    }
+                }).catch(error => {
+                    alert('Houve um erro ao processar sua solicitação. Por favor, tente novamente ou use o botão do WhatsApp direto.');
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.style.pointerEvents = '';
+                });
+            });
         }
     </script>
 

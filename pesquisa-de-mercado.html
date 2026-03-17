@@ -451,7 +451,7 @@
             <li><span class="check-icon">✓</span> Conversa consultiva sem custo inicial</li>
           </ul>
 
-          <form id="form-pesquisa" action="#" method="POST">
+          <form id="form-pesquisa" action="https://formspree.io/f/mreyynyn" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="nome">Nome</label>
@@ -1003,15 +1003,45 @@
     document.getElementById('form-pesquisa').addEventListener('submit', function (e) {
       e.preventDefault();
       const btn = document.getElementById('btn-enviar');
-      btn.textContent = '✓ Solicitação enviada!';
-      btn.style.background = '#009DAD';
+      const originalText = btn.textContent;
+
+      // Formatar mensagem para WhatsApp
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const email = document.getElementById('email').value;
+      const empresa = document.getElementById('empresa').value || 'Não informado';
+      const cargo = document.getElementById('cargo').value || 'Não informado';
+
+      const textoZap = `Olá Velora! Tenho interesse em uma Pesquisa de Mercado.%0A%0A*Nome:* ${nome}%0A*Telefone:* ${telefone}%0A*E-mail:* ${email}%0A*Empresa:* ${empresa}%0A*Cargo:* ${cargo}`;
+      const urlZap = `https://wa.me/5532985066027?text=${textoZap}`;
+
+      btn.textContent = '✓ Enviando...';
+      btn.style.background = '#00A844';
       btn.style.pointerEvents = 'none';
-      setTimeout(() => {
-        btn.textContent = 'Solicitar Proposta';
+
+      fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          btn.textContent = '✓ Sucesso! Abrindo WhatsApp...';
+          setTimeout(() => {
+            window.open(urlZap, '_blank');
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.pointerEvents = '';
+            this.reset();
+          }, 1500);
+        } else {
+          throw new Error('Erro no envio');
+        }
+      }).catch(error => {
+        alert('Houve um erro ao processar. Tente novamente ou use o ícone do WhatsApp.');
+        btn.textContent = originalText;
         btn.style.background = '';
         btn.style.pointerEvents = '';
-        this.reset();
-      }, 3000);
+      });
     });
   </script>
 
