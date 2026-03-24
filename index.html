@@ -17,6 +17,21 @@
       gtag('js', new Date());
       gtag('config', 'AW-18034314399');
     </script>
+    <!-- Fragmento de conversão Google Ads: Inscrições no formulário de leads -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18034314399/4WFzCI20po4cEJ-Zt5dD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -1008,6 +1023,16 @@
                     headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
+                        // Rastreamento GTM: evento personalizado
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'event': 'form_lead_sucesso',
+                            'form_id': 'form-diagnostico',
+                            'pagina': window.location.pathname
+                        });
+                        // Rastreamento Google Ads: conversão de lead
+                        gtag_report_conversion();
+
                         btn.textContent = '✓ Quase lá! Abrindo WhatsApp...';
                         setTimeout(() => {
                             window.open(urlZap, '_blank');
