@@ -32,6 +32,23 @@
       return false;
     }
     </script>
+    <!-- Fragmento de conversão Google Ads: Contacto (WhatsApp) -->
+    <script>
+    function gtag_report_conversion_whatsapp(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18034314399/N0kqCN3d8I4cEJ-Zt5dD',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -1063,6 +1080,8 @@
                     'origem': 'fab_flutuante',
                     'pagina': window.location.pathname
                 });
+                // Conversão Google Ads: Contacto (WhatsApp)
+                gtag_report_conversion_whatsapp();
             });
         }
     </script>
