@@ -1087,6 +1087,19 @@
         btn.style.pointerEvents = '';
       });
     });
+
+    // Rastreamento: clique no botão flutuante do WhatsApp
+    const fabWhatsapp = document.querySelector('.fab-whatsapp');
+    if (fabWhatsapp) {
+      fabWhatsapp.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'whatsapp_click',
+          'origem': 'fab_flutuante',
+          'pagina': window.location.pathname
+        });
+      });
+    }
   </script>
 
 </body>
