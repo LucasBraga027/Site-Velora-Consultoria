@@ -1246,15 +1246,16 @@ a {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(10, 28, 31, 0.98);
+    background: rgba(4, 18, 20, 0.99);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     flex-direction: column;
     padding: 1.5rem 5%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
   }
 
   .nav-links.active {
