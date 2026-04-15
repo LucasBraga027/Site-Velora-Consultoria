@@ -92,7 +92,6 @@
             z-index: 0;
         }
 
-        .header,
         .hero,
         .audience-section,
         .problem-section,
@@ -454,10 +453,10 @@
             color: var(--bg-primary);
         }
 
-        /* Ajuste fino para igualar posição com a página de pesquisa */
+        /* Ajuste fino para igualar posição com a página de pesquisa *
         @media (min-width: 1025px) {
             .hero-right {
-                transform: translateY(-60px);
+                transform: translateY(0px); /* reverted */
             }
         }
 
@@ -511,7 +510,7 @@
         <!-- HERO -->
         <section class="hero" id="hero">
             <img src="images/analyst_pointing_v2.png" alt="Analista"
-                style="position: absolute; top: 0; left: 0; width: 62%; height: 100vh; z-index: 0; opacity: 0.95; pointer-events: none; object-fit: cover; object-position: center 10%; mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);" />
+                style="position: absolute; top: 10vh; left: 0; width: 65%; height: 90vh; z-index: 0; opacity: 0.95; pointer-events: none; object-fit: cover; object-position: right top; mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect;" />
             <div class="hero-left reveal" style="z-index: 2; padding-left: 2rem;">
                 <span class="hero-badge">📈 Análise de Mercado</span>
                 <h1 class="hero-headline">
@@ -1042,24 +1041,6 @@
             btnToTop.addEventListener('click', (e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-        
-        if(mobileMenuBtn && navLinks) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuBtn.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
             });
         }
 

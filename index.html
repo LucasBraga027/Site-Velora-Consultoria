@@ -116,7 +116,6 @@
             transform: scale(1.05);
         }
 
-        .header,
         .hero-institutional,
         .vision-section,
         .services-section,
@@ -170,7 +169,8 @@
             align-items: center;
             justify-content: flex-start;
             text-align: center;
-            padding: 140px 6% 80px;
+            padding: 100px 6% 80px;
+            min-height: auto;
         }
 
         .hero-institutional .hero-badge {
@@ -484,7 +484,7 @@
     <main>
 
         <!-- HERO INSTITUTIONAL -->
-        <section class="hero hero-institutional" id="hero" style="justify-content: center; text-align: center; flex-direction: column; align-items: center;">
+        <section class="hero hero-institutional" id="hero">
             <div
                 style="z-index: 2; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
                 <span class="hero-badge"
@@ -968,7 +968,7 @@
     </div>
 
     <!-- Floating Mobile CTA -->
-    <div class="floating-cta">
+    <div class="floating-cta" id="floating-cta">
         <a href="#fale-conosco" style="background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; padding: 1rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; font-weight: bold; width: 100%; box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);">
             Falar com um Estrategista
         </a>
@@ -1037,6 +1037,18 @@
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
             }, 8000);
+        }
+
+        // Floating CTA
+        const floatingCta = document.getElementById('floating-cta');
+        const formSection = document.getElementById('fale-conosco');
+        if (floatingCta && formSection) {
+            const floatObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    floatingCta.classList.toggle('visible', !entry.isIntersecting);
+                });
+            }, { threshold: 0.3 });
+            floatObserver.observe(formSection);
         }
 
         // Form submit principal

@@ -1285,6 +1285,11 @@ a {
 
   .floating-cta {
     display: block;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    z-index: 999;
   }
 }
 
