@@ -1286,9 +1286,9 @@ a {
   .floating-cta {
     display: block;
     position: fixed;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     z-index: 999;
   }
 }
