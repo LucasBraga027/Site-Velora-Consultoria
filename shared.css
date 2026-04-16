@@ -308,7 +308,8 @@ a {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
   padding: 0.7rem 1rem;
   border-radius: 10px;
@@ -320,11 +321,13 @@ a {
 }
 
 .form-group input:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
   transform: translateY(-1px);
 }
 
-.form-group input::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
   opacity: 0.4;
 }
 

@@ -189,20 +189,23 @@
         }
 
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             background: var(--input-bg);
             border-color: var(--input-border);
             color: var(--text-primary);
         }
 
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             border-color: var(--input-focus);
             box-shadow: 0 0 0 3px var(--accent-glow);
             background: rgba(255, 255, 255, 0.06);
         }
 
-        .form-group input::placeholder {
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.3);
         }
 
@@ -523,7 +526,7 @@
                 </p>
             </div>
 
-            <div class="hero-right" style="z-index: 2;">
+            <div class="hero-right" style="z-index: 2; transform: translateY(-40px);">
                 <div class="form-card" id="formulario"
                     style="background: rgba(10, 28, 31, 0.85); border: 1px solid var(--card-border); backdrop-filter: blur(10px);">
                     <h2 class="form-title">Receba uma leitura do seu cenário</h2>
@@ -564,6 +567,11 @@
                                 <input type="text" id="setor" name="setor" placeholder="Ex: Tecnologia, Varejo..." minlength="3" maxlength="50" title="No mínimo 3 caracteres">
                                 <span class="validation-hint">Opcional (mínimo 3 caracteres)</span>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar na sua estratégia?" rows="3" minlength="10" maxlength="1000" title="A mensagem deve ter no mínimo 10 caracteres" style="resize: vertical; font-family: 'Inter', sans-serif;"></textarea>
+                            <span class="validation-hint">Opcional (mínimo 10 caracteres)</span>
                         </div>
                         <button type="submit" class="form-btn" id="btn-enviar">Solicitar Leitura de Cenário</button>
                     </form>
