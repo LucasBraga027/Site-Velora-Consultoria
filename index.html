@@ -1088,7 +1088,9 @@
                             'pagina': window.location.pathname
                         });
                         // Rastreamento Google Ads: conversão de lead
-                        gtag_report_conversion();
+                        if (typeof gtag_report_conversion === 'function') {
+                            gtag_report_conversion();
+                        }
 
                         btn.textContent = '✓ Quase lá! Abrindo WhatsApp...';
                         setTimeout(() => {

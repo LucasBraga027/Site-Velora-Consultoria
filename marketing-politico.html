@@ -1169,15 +1169,17 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                        // Rastreamento GTM: evento personalizado
-                        window.dataLayer = window.dataLayer || [];
-                        window.dataLayer.push({
-                            'event': 'form_lead_sucesso',
-                            'form_id': 'form-politico',
-                            'pagina': window.location.pathname
-                        });
-                        // Rastreamento Google Ads: conversão de lead
+                    // Rastreamento GTM: evento personalizado
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'form_lead_sucesso',
+                        'form_id': 'form-politico',
+                        'pagina': window.location.pathname
+                    });
+                    // Rastreamento Google Ads: conversão de lead
+                    if (typeof gtag_report_conversion === 'function') {
                         gtag_report_conversion();
+                    }
 
                     btn.textContent = '✓ Pronto! Abrindo WhatsApp...';
                     setTimeout(() => {

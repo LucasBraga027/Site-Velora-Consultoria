@@ -1124,13 +1124,14 @@
             const nome = document.getElementById('nome').value;
             const telefone = document.getElementById('telefone').value;
             const email = document.getElementById('email').value;
-            const empresa = document.getElementById('empresa').value || 'Não informado';
+            const empresa = document.getElementById('empresa').value || 'Não informada';
             const setor = document.getElementById('setor').value || 'Não informado';
+            const mensagem = document.getElementById('mensagem').value || 'Não informada';
 
-            const textoZap = `Olá Velora! Tenho interesse em uma Análise de Cenário.%0A%0A*Nome:* ${nome}%0A*Telefone:* ${telefone}%0A*E-mail:* ${email}%0A*Empresa:* ${empresa}%0A*Setor:* ${setor}`;
+            const textoZap = `Olá Velora! Tenho interesse em uma Análise de Cenário.%0A%0A*Nome:* ${nome}%0A*Telefone:* ${telefone}%0A*E-mail:* ${email}%0A*Empresa:* ${empresa}%0A*Setor:* ${setor}%0A*Mensagem:* ${mensagem}`;
             const urlZap = `https://wa.me/5532985066027?text=${textoZap}`;
 
-            btn.textContent = '✓ Enviando para e-mail...';
+            btn.textContent = '✓ Processando...';
             btn.style.background = '#00A844';
             btn.style.pointerEvents = 'none';
 
@@ -1140,17 +1141,17 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                        // Rastreamento GTM: evento personalizado
-                        window.dataLayer = window.dataLayer || [];
-                        window.dataLayer.push({
-                            'event': 'form_lead_sucesso',
-                            'form_id': 'form-analise',
-                            'pagina': window.location.pathname
-                        });
-                        // Rastreamento Google Ads: conversão de lead
-                        gtag_report_conversion();
+                    // Rastreamento GTM: evento personalizado
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'form_lead_sucesso',
+                        'form_id': 'form-analise',
+                        'pagina': window.location.pathname
+                    });
+                    // Rastreamento Google Ads: conversão de lead
+                    try { if (typeof gtag_report_conversion === 'function') gtag_report_conversion(); } catch(err) { console.error(err); }
 
-                    btn.textContent = '✓ Sucesso! Abrindo WhatsApp...';
+                    btn.textContent = '✓ Pronto! Abrindo WhatsApp...';
                     setTimeout(() => {
                         window.open(urlZap, '_blank');
                         btn.textContent = originalText;
@@ -1162,7 +1163,8 @@
                     throw new Error('Erro no envio');
                 }
             }).catch(error => {
-                alert('Houve um erro no processamento. Tente novamente ou contate-nos pelo botão de WhatsApp.');
+                console.error('Erro no Formspree:', error);
+                window.open(urlZap, '_blank');
                 btn.textContent = originalText;
                 btn.style.background = '';
                 btn.style.pointerEvents = '';
