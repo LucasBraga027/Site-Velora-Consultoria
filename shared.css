@@ -1481,7 +1481,7 @@ a {
 
 @media (max-width: 768px) {
   .global-fabs {
-    bottom: 80px;
+    bottom: 100px;
     /* Above mobile CTA if present */
     right: 20px;
   }
@@ -1491,6 +1491,12 @@ a {
   .fab-totop {
     width: 48px;
     height: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .global-fabs {
+    bottom: 100px; /* Above mobile CTA if present */
   }
 }
 
